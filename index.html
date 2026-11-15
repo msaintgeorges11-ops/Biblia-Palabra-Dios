@@ -36,10 +36,13 @@ header{background:#fff;border-radius:20px;padding:16px;text-align:center}
 header h1{font-size:28px;font-weight:bold;letter-spacing:.5px;text-align:center;margin-left:auto;margin-right:auto}
 header .hd{display:table;margin:0 auto;text-align:left}
 header .hd h1{text-align:left;margin:0}
-header p{font-size:min(14px,calc((100vw - 64px)/21));margin-top:6px;color:var(--muted);text-align:left;white-space:nowrap}
+header p{font-size:min(14px,calc((100vw - 64px)/21));margin-top:6px;color:var(--muted);text-align:left}
 .badge{display:inline-block;background:var(--y);color:#000;font-weight:bold;font-size:13px;padding:4px 10px;border-radius:10px;margin-top:8px}
 .card{background:#fff;border-radius:20px;padding:14px;margin-top:12px;text-align:center}
 .card h2{font-size:17px;color:#000;margin-bottom:8px}
+.hd2{margin:0 auto 10px;text-align:center}
+.hd2 h2{text-align:center;margin-bottom:8px}
+.hd2 .small{display:table;margin:0 auto;text-align:left;max-width:100%}
 .small{font-size:15px;color:var(--muted);margin-top:6px}
 .hero{max-width:260px;margin:0 auto}
 .hero img{width:100%;height:auto;display:block}
@@ -180,8 +183,10 @@ details.cap{border-top:1px dashed var(--line)}
 
 <!-- OFRENDA -->
 <div class="card" data-tab="art">
-  <h2>💌 Apoya esta obra</h2>
-  <p class="small">La Palabra de Dios aquí es gratuita, sin anuncios y para todos. Cada ofrenda ayuda a mantener esta luz encendida.</p>
+  <div class="hd2">
+    <h2>💌 Apoya esta obra</h2>
+    <p class="small">La Palabra de Dios aquí es gratuita, sin<br>anuncios y para todos. Cada ofrenda ayuda a<br>mantener esta luz encendida.</p>
+  </div>
   <a class="btn-of" href="https://www.paypal.com/ncp/payment/VGKXM24EEL6YS" target="_blank" rel="noopener noreferrer">❤️ Ofrendar</a>
 </div>
 
