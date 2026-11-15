@@ -34,7 +34,9 @@ body{color:#000;font-family:Arial,Helvetica,sans-serif;display:flex;justify-cont
 a{color:inherit}
 header{background:#fff;border-radius:20px;padding:16px;text-align:center}
 header h1{font-size:28px;font-weight:bold;letter-spacing:.5px;text-align:center;margin-left:auto;margin-right:auto}
-header p{font-size:14px;margin-top:6px;color:var(--muted);text-align:left;padding:0 6px}
+header .hd{display:table;margin:0 auto;text-align:left}
+header .hd h1{text-align:left;margin:0}
+header p{font-size:min(14px,calc((100vw - 64px)/21));margin-top:6px;color:var(--muted);text-align:left;white-space:nowrap}
 .badge{display:inline-block;background:var(--y);color:#000;font-weight:bold;font-size:13px;padding:4px 10px;border-radius:10px;margin-top:8px}
 .card{background:#fff;border-radius:20px;padding:14px;margin-top:12px;text-align:center}
 .card h2{font-size:17px;color:#000;margin-bottom:8px}
@@ -129,8 +131,10 @@ details.cap{border-top:1px dashed var(--line)}
 <div class="wrap" data-active="home">
 
 <header>
-  <h1>Biblia Palabra Dios</h1>
-  <p>📖 Biblia gratis para todos, con audio 🔊, buscador de versículos y un artículo diario con oración, historia y mensaje. Cada día.</p>
+  <div class="hd">
+    <h1>Biblia Palabra Dios</h1>
+    <p>📖 Biblia gratis para todos, con audio 🔊,<br>buscador de versículos y un artículo diario<br>con oración, historia y mensaje. Cada día.</p>
+  </div>
 </header>
 
 <!-- INICIO -->
