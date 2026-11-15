@@ -1,4 +1,4 @@
-# La Palabra del Dios Viviente
+# Biblia Palabra Dios
 
 📖 Biblia gratis en español, 🔊 con audio, buscador de versículos y un artículo diario con oración, historia y mensaje.
 
