@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Palabra de Dios de hoy – Evangelio y versículos del día | La Palabra del Dios Viviente</title>
+<title>Palabra de Dios de hoy – Evangelio y versículos del día | Biblia Palabra Dios</title>
 <meta name="description" content="Palabra de Dios de hoy: versículos de la Biblia, oración, historia y reflexión del día. Evangelio y mensaje nuevo cada mañana y cada tarde.">
 <link rel="canonical" href="https://www.biblia-palabra-dios.com/hoy.html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Palabra de Dios de hoy – Evangelio y versículos del día | La Palabra del Dios Viviente">
+<meta property="og:title" content="Palabra de Dios de hoy – Evangelio y versículos del día | Biblia Palabra Dios">
 <meta property="og:description" content="Palabra de Dios de hoy: versículos de la Biblia, oración, historia y reflexión del día. Evangelio y mensaje nuevo cada mañana y cada tarde.">
 <meta property="og:url" content="https://www.biblia-palabra-dios.com/hoy.html">
 <meta name="theme-color" content="#b8892f">
@@ -146,7 +146,7 @@ function render(){
   }
   var open=pm?'Gracias, Señor, por este día; nos hiciste pasar bien la jornada. ':'Gracias, Señor, por esta nueva mañana y por la noche que me hiciste pasar bien. ';
   var f=d.toLocaleDateString('es',{weekday:'long',day:'numeric',month:'long'}),words=0;
-  document.title='Palabra de Dios de hoy: '+x.t+' | La Palabra del Dios Viviente';
+  document.title='Palabra de Dios de hoy: '+x.t+' | Biblia Palabra Dios';
   box.innerHTML='';HQ=[];
   box.appendChild(el('h1',null,'📰 Palabra de Dios de hoy'));
   var sb=el('p','s');sb.innerHTML=f.charAt(0).toUpperCase()+f.slice(1)+' · '+(pm?NOCHE+' Esta noche':'🌅 Esta mañana');box.appendChild(sb);
@@ -158,7 +158,7 @@ function render(){
     var was=AS===1;stop();fill();if(was)play();
   };
   au.appendChild(sl);
-  var ST='📰 '+x.t+' · La Palabra del Dios Viviente';
+  var ST='📰 '+x.t+' · Biblia Palabra Dios';
   var wt=el('a','aBtn');wt.innerHTML='📲 Compartir por WhatsApp'+WAI;wt.href='https://wa.me/?text='+encodeURIComponent(ST+'\n'+SHARE_URL);wt.target='_blank';wt.rel='noopener noreferrer';wt.style.cssText='display:block;text-align:center;text-decoration:none;background:#fff;border-color:#f7b82c;box-shadow:none;padding:6px 22px;font-size:13px';
   
   var dur=el('p','s','');au.appendChild(dur);box.appendChild(au);
