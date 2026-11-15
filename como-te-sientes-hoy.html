@@ -50,6 +50,9 @@ header p{font-size:14px;margin-top:6px;color:var(--muted)}
 .go.alt{background:#fff;border:2px solid #f7b82c;box-shadow:none}
 .card p.body{font-size:16px;line-height:1.6}
 .prayer{border-left:5px solid var(--b);background:var(--soft);border-radius:12px;padding:10px 12px;font-size:16px;line-height:1.6}
+.nv{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;padding:14px 4px 4px}
+.nv a{color:#000;font-weight:bold;font-size:15px;text-decoration:underline}
+@media(prefers-color-scheme:dark){.nv a{color:#f3ead2}}
 footer{font-size:14px;color:#3a2a00;text-align:center;line-height:1.6;margin-top:14px}
 footer a{color:#3a2a00}
 @media(prefers-color-scheme:dark){html,body{background:#2a2110}header,.card{background:#1f1a10;color:#f3ead2}header p,.note{color:#bbb}.card h2{color:#f7b82c}.chip{background:#1f1a10;color:#f3ead2;border-color:#4a3d1c}.chip[aria-pressed="true"]{background:var(--y);color:#000}.btn.alt,.go.alt{background:#1f1a10;color:#f3ead2}.prayer{background:#2a2110}footer,footer a{color:#f3ead2}.vcard{background:#fff;color:#000}}
@@ -57,6 +60,7 @@ footer a{color:#3a2a00}
 </head>
 <body>
 <div class="wrap">
+<nav class="nv"><a href="/">Inicio</a><a href="/about.html">Acerca de</a><a href="/contact.html">Contacto</a><a href="/privacy.html">Privacidad</a></nav>
 <header>
   <h1>💛 ¿Cómo te sientes hoy?</h1>
   <p>Elige una opción y recibe un versículo, una reflexión y una oración corta.</p>
