@@ -127,7 +127,33 @@ details.cap{border-top:1px dashed var(--line)}
 .texto b{margin-right:2px}
 #pstat{display:none;position:fixed;left:50%;transform:translateX(-50%);bottom:84px;max-width:90%;background:#222;color:#fff;padding:10px 16px;border-radius:999px;font-size:15px;z-index:99;text-align:center}
 .bk.or{flex-direction:column;align-items:flex-start;gap:4px}.bk.or .bn{letter-spacing:0;line-height:1.35;margin-right:0}.bk.or .bc{white-space:normal}
-.vsel{font-size:14px;padding:7px 8px}.aud .vwrap{max-width:240px}.aud button,.caud button{padding:8px 22px;font-size:15px!important;width:auto!important;max-width:none!important;flex:0 0 auto!important}.card[data-tab="hoy"]:not(.hoy){padding:8px 14px}.card[data-tab="hoy"]:not(.hoy) .go{margin-top:0}.caud{flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center}.caud .vwrap{width:100%;max-width:240px;flex:0 0 auto}</style>
+.vsel{font-size:14px;padding:7px 8px}.aud .vwrap{max-width:240px}.aud button,.caud button{padding:8px 22px;font-size:15px!important;width:auto!important;max-width:none!important;flex:0 0 auto!important}.card[data-tab="hoy"]:not(.hoy){padding:8px 14px}.card[data-tab="hoy"]:not(.hoy) .go{margin-top:0}.caud{flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center}.caud .vwrap{width:100%;max-width:240px;flex:0 0 auto}
+.sub2{display:block!important;text-align:center!important;line-height:1.5;margin-top:4px}
+.card.ofr{display:flex;align-items:center;justify-content:space-between;gap:10px;text-align:left;padding:12px 14px}
+.card.ofr .ofr-t{flex:1 1 auto;min-width:0}
+.card.ofr h2{font-size:16px;margin-bottom:4px;text-align:left}
+.card.ofr .small{font-size:13px;margin-top:0;text-align:left;line-height:1.4}
+.card.ofr .btn-of{flex:0 0 auto;margin-top:0;font-size:15px;padding:10px 14px;white-space:nowrap}
+.card.row2{display:flex;gap:8px;padding:10px}
+.card.row2 .go{flex:1 1 0;margin-top:0;padding:12px 6px;font-size:14px;min-width:0;white-space:nowrap}
+
+/* v3 compact */
+.card.ofr{padding:10px 10px 10px 14px;gap:8px}
+.card.ofr .ofr-t{flex:1 1 0}
+.card.ofr .small{font-size:12.5px;line-height:1.35}
+.card.ofr .btn-of{margin-left:auto;font-size:14px;padding:10px 12px;align-self:center}
+.hero{max-width:170px}
+.card[data-tab="home"]:has(.hero){padding:8px 14px}
+#msg{min-height:0;margin-top:0}
+#msg:not(:empty){margin-top:8px}
+form.card[data-tab="home"]{padding-bottom:12px}
+form.card[data-tab="home"]+.card[data-tab="home"]{margin-top:8px;padding:8px 14px}
+
+.card.ofr{flex-wrap:wrap;row-gap:6px}
+.card.ofr .ofr-t{display:contents}
+.card.ofr h2{flex:0 0 100%;text-align:center!important;margin:0}
+.card.ofr .small{flex:1 1 0;min-width:0}
+</style>
 <meta name="google-adsense-account" content="ca-pub-7893807516191350"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7893807516191350" crossorigin="anonymous"></script><script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebSite", "name": "Biblia Palabra Dios", "alternateName": "biblia-palabra-dios.com", "url": "https://www.biblia-palabra-dios.com/", "inLanguage": "es"}, {"@context": "https://schema.org", "@type": "ItemList", "name": "Menú principal", "itemListElement": [{"@type": "SiteNavigationElement", "position": 1, "name": "Leer la Biblia", "url": "https://www.biblia-palabra-dios.com/leer.html"}, {"@type": "SiteNavigationElement", "position": 2, "name": "Artículo de hoy", "url": "https://www.biblia-palabra-dios.com/hoy.html"}, {"@type": "SiteNavigationElement", "position": 3, "name": "Artículos", "url": "https://www.biblia-palabra-dios.com/articulos.html"}, {"@type": "SiteNavigationElement", "position": 4, "name": "¿Cómo te sientes hoy?", "url": "https://www.biblia-palabra-dios.com/como-te-sientes-hoy.html"}, {"@type": "SiteNavigationElement", "position": 5, "name": "Acerca de", "url": "https://www.biblia-palabra-dios.com/acerca-de.html"}, {"@type": "SiteNavigationElement", "position": 6, "name": "Contacto", "url": "https://www.biblia-palabra-dios.com/contact.html"}]}]</script>
 </head>
 <body>
@@ -170,22 +196,22 @@ details.cap{border-top:1px dashed var(--line)}
 <!-- NUEVO TESTAMENTO -->
 <div class="card" data-tab="nt">
   <h2>📖 NUEVO TESTAMENTO</h2>
-  <p class="small">27 libros · abre un libro, luego un capítulo, y toca el versículo</p>
+  <p class="small sub2">27 libros<br>Abre un libro, luego un capítulo,<br>y toca el versículo</p>
 </div>
 <div id="listNT" data-tab="nt"></div>
 
 <!-- ANTIGUO TESTAMENTO -->
 <div class="card" data-tab="at">
   <h2>📜 ANTIGUO TESTAMENTO</h2>
-  <p class="small">39 libros · abre un libro, luego un capítulo, y toca el versículo</p>
+  <p class="small sub2">39 libros<br>Abre un libro, luego un capítulo,<br>y toca el versículo</p>
 </div>
 <div id="listAT" data-tab="at"></div>
 
 <!-- OFRENDA -->
-<div class="card" data-tab="art">
-  <div class="hd2">
+<div class="card ofr" data-tab="art">
+  <div class="ofr-t">
     <h2>Apoya esta obra 💌</h2>
-    <p class="small">La Palabra de Dios aquí es gratuita, sin<br>anuncios y para todos. Cada ofrenda ayuda a<br>mantener esta luz encendida.</p>
+    <p class="small">La Palabra de Dios aquí es gratuita, sin anuncios y para todos. Cada ofrenda ayuda a mantener esta luz encendida.</p>
   </div>
   <a class="btn-of" href="https://www.paypal.com/ncp/payment/VGKXM24EEL6YS" target="_blank" rel="noopener noreferrer">❤️ Ofrendar</a>
 </div>
@@ -195,8 +221,7 @@ details.cap{border-top:1px dashed var(--line)}
   <h2>📰 ARTÍCULOS</h2>
   <p class="small">Artículos libres sobre cada libro de la Biblia.</p>
 </div>
-<div class="card" data-tab="art"><a class="go" href="/hoy.html" style="margin-top:0">📰 Artículo de hoy</a></div>
-<div class="card" data-tab="art"><a class="go alt" href="/acerca-de.html" style="margin-top:0">🕊️ Acerca de Dios</a></div>
+<div class="card row2" data-tab="art"><a class="go" href="/hoy.html">📰 Artículo de hoy</a><a class="go alt" href="/acerca-de.html">🕊️ Acerca de Dios</a></div>
 <details class="libro" data-tab="art"><summary><span class="lt"><span class="ic">🙏</span><span class="bn">Oraciones cristianas</span><span class="bc">20 artículos</span></span></summary>
 <div class="caps">    <a class="bk or" href="/oracion/oracion-pedir-perdon-a-dios-por-nuestros-pecados.html"><span class="bn">🙏 Oración para pedir perdón a Dios por nuestros pecados</span><span class="bc">Perdón y restauración</span></a>
     <a class="bk or" href="/oracion/oracion-por-sanidad-fisica-y-del-alma.html"><span class="bn">🙏 Oración por sanidad física y sanidad del alma</span><span class="bc">Salud, consuelo y fe</span></a>
