@@ -160,6 +160,26 @@ form.card[data-tab="home"]+.card[data-tab="home"]{margin-top:8px;padding:8px 14p
 .card.ofr h2{text-align:center!important;font-size:18px;margin:0 0 4px}
 .card.ofr .small{display:block;text-align:left;font-size:13px;line-height:1.4;margin:0}
 .card.ofr .btn-of{float:left;margin:1.5em 12px 0 0;font-size:15px;padding:10px 14px;white-space:nowrap}
+.card.ofr .small{font-size:15px!important;line-height:1.4}
+.card.ofr h2{font-size:17px!important}
+.card.ofr .ofr-b{display:flex;align-items:center;gap:10px}
+.card.ofr .ofr-b .btn-of{float:none;margin:0;flex:0 0 auto}
+.card.ofr .ofr-b .small{flex:1 1 0;min-width:0}
+.card.ofr .ofr-b{display:flex;flex-direction:column;align-items:center;gap:10px}
+.card.ofr .ofr-b .small{flex:none;width:100%;text-align:center}
+.card.ofr .ofr-b .btn-of{font-size:14px;padding:8px 18px}
+.card.ofr,.wrap[data-active="art"] .card.ofr{padding:12px 22px 14px!important}
+.card.ofr .ofr-b .small{padding:0 4px}
+.card.ofr,.wrap[data-active="art"] .card.ofr{padding:12px 10px 14px!important}
+.card.ofr .ofr-b .small{padding:0;white-space:nowrap;font-size:min(15px,calc((100vw - 44px)/22))!important}
+.card.ofr,.wrap[data-active="art"] .card.ofr{padding:12px 18px 14px!important}
+.card.ofr .ofr-b .small{white-space:normal!important;text-wrap:balance;font-size:15px!important;max-width:100%;overflow-wrap:break-word}
+.card.ofr,.wrap[data-active="art"] .card.ofr{padding:12px 8px 14px!important}
+.card.ofr .ofr-b .small{white-space:nowrap!important;text-wrap:wrap;overflow:visible}
+.card.ofr .ofr-b .small{text-align:justify!important;text-align-last:justify}
+.card.ofr .ofr-b .small{display:block;width:100%}
+.card.ofr .ofr-b .small{display:table!important;width:auto!important;margin:0 auto!important;text-align:left!important;text-align-last:auto!important}
+.card.ofr .ofr-b .small{font-size:min(14px,calc((100vw - 64px)/21))!important;white-space:normal!important;max-width:100%}
 </style>
 <meta name="google-adsense-account" content="ca-pub-7893807516191350"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7893807516191350" crossorigin="anonymous"></script><script type="application/ld+json">[{"@context": "https://schema.org", "@type": "WebSite", "name": "Biblia Palabra Dios", "alternateName": "biblia-palabra-dios.com", "url": "https://www.biblia-palabra-dios.com/", "inLanguage": "es"}, {"@context": "https://schema.org", "@type": "ItemList", "name": "Menú principal", "itemListElement": [{"@type": "SiteNavigationElement", "position": 1, "name": "Leer la Biblia", "url": "https://www.biblia-palabra-dios.com/leer.html"}, {"@type": "SiteNavigationElement", "position": 2, "name": "Artículo de hoy", "url": "https://www.biblia-palabra-dios.com/hoy.html"}, {"@type": "SiteNavigationElement", "position": 3, "name": "Artículos", "url": "https://www.biblia-palabra-dios.com/articulos.html"}, {"@type": "SiteNavigationElement", "position": 4, "name": "¿Cómo te sientes hoy?", "url": "https://www.biblia-palabra-dios.com/como-te-sientes-hoy.html"}, {"@type": "SiteNavigationElement", "position": 5, "name": "Acerca de", "url": "https://www.biblia-palabra-dios.com/acerca-de.html"}, {"@type": "SiteNavigationElement", "position": 6, "name": "Contacto", "url": "https://www.biblia-palabra-dios.com/contact.html"}]}]</script>
 </head>
@@ -217,7 +237,10 @@ form.card[data-tab="home"]+.card[data-tab="home"]{margin-top:8px;padding:8px 14p
 <!-- OFRENDA -->
 <div class="card ofr" data-tab="art">
   <h2>Apoya esta obra 💌</h2>
-  <p class="small"><a class="btn-of" href="https://www.paypal.com/ncp/payment/VGKXM24EEL6YS" target="_blank" rel="noopener noreferrer">❤️ Ofrendar</a>La Palabra de Dios aquí es gratuita, sin anuncios y para todos. Cada ofrenda ayuda a mantener esta luz encendida.</p>
+  <div class="ofr-b">
+    <p class="small">La Palabra de Dios aquí es gratuita,<br>sin anuncios y para todos. Cada ofrenda<br>ayuda a mantener esta luz encendida.</p>
+    <a class="btn-of" href="https://www.paypal.com/ncp/payment/VGKXM24EEL6YS" target="_blank" rel="noopener noreferrer">✉️ Ofrendar</a>
+  </div>
 </div>
 
 <!-- ARTÍCULOS -->
