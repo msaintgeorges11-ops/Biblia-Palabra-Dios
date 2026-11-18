@@ -329,7 +329,7 @@ setTab(location.hash==='#hoy'?'hoy':'home');
 // ---- Audio (voix de l'appareil) ----
 var AQ=[],AI=0,AS=0,AT=0,AO=null,AR=null,AL=TEXT_LANG,VS={};
 function vsel(l){if(!(l in VS)){try{VS[l]=localStorage.getItem('voixNom-'+l)||''}catch(e){VS[l]=''}}return VS[l]}
-function vRank(x){var g=x.lang.toLowerCase().replace('_','-'),n=x.name.toLowerCase(),r=0;if(g==='fr-ca')r-=10;if(/(female|femme|chantal|amelie|am\u00e9lie|sylvie|denise|clara|caroline|google fran\u00e7ais)/.test(n))r-=3;if(/(male|homme|antoine|jean|claude|thierry|nicolas|henri)/.test(n)&&!/female/.test(n))r+=3;return r}
+function vRank(x){var g=x.lang.toLowerCase().replace('_','-'),n=x.name.toLowerCase(),r=0;if(/(natural|neural|online|premium|enhanced|wavenet|siri|vivid)/.test(n))r-=20;if(/google/.test(n))r-=8;if(x.localService===false)r-=4;if(/(compact|espeak|robot)/.test(n))r+=10;if(g==='fr-ca')r-=2;if(/(female|femme|chantal|amelie|am\u00e9lie|sylvie|denise|clara|caroline|google fran\u00e7ais)/.test(n))r-=3;if(/(male|homme|antoine|jean|claude|thierry|nicolas|henri)/.test(n)&&!/female/.test(n))r+=3;return r}
 function vList(l){try{var a=window.speechSynthesis.getVoices().filter(function(x){return x.lang.toLowerCase().replace('_','-').indexOf(l)===0});if(l==='fr'){a=a.map(function(x,i){return{x:x,i:i}}).sort(function(p,q){return vRank(p.x)-vRank(q.x)||p.i-q.i}).map(function(o){return o.x})}return a}catch(e){return[]}}
 function vId(v){return v.voiceURI||v.name}
 function aVoice(){var all=vList(AL);if(!all.length)return null;var w=vsel(AL),v=w&&all.filter(function(x){return vId(x)===w})[0];return v||all[0]}
@@ -338,7 +338,7 @@ function aSpeak(){
   var it=AQ[AI];
   if(it.p){if(AR)AR.classList.remove('rd');AR=it.p;AR.classList.add('rd');try{AR.scrollIntoView({block:'center',behavior:'smooth'})}catch(e){}}
   var tk=++AT,u=new SpeechSynthesisUtterance(it.t),v=aVoice();u.lang=AL==='fr'?'fr-CA':'es-ES';
-  if(v){u.voice=v;u.lang=v.lang}u.rate=.92;
+  if(v){u.voice=v;u.lang=v.lang}u.rate=.88;
   var nx=function(){if(AS===1&&tk===AT){AI++;aSpeak()}};u.onend=nx;u.onerror=nx;window.speechSynthesis.speak(u);
 }
 function aUpd(){document.querySelectorAll('.aBtn').forEach(function(p){p.textContent=(p===AO&&AS)?(AS===1?'⏹ Arrêter':'▶ Continuer'):'🔊 Écouter'})}
