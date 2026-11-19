@@ -207,7 +207,18 @@ Object.keys(DATA).forEach(function(k){
   chipsEl.appendChild(b);
 });
 
-function bibleUrl(ref){ return '/francais/'; }
+var BK = {philippiens:'filipenses','1 pierre':'1-pedro',matthieu:'mateo',esaie:'isaias',josue:'josue',psaumes:'salmos',deuteronome:'deuteronomio',jeremie:'jeremias',romains:'romanos',lamentations:'lamentaciones',jean:'juan','1 thessaloniciens':'1-tesalonicenses'};
+// Psaumes dont le titre est le verset 1 : le texte numérise un verset de moins
+var PO = {4:1,30:1,34:1,46:1,56:1};
+function bibleUrl(ref){
+  var m = ref.match(/^(.+?) (\d+):(\d+)(?:-(\d+))?$/);
+  if (!m) return '/francais/';
+  var s = BK[m[1].normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()];
+  if (!s) return '/francais/';
+  var c = +m[2], a = +m[3], b = m[4] ? +m[4] : 0;
+  if (s === 'salmos' && PO[c]) { a -= PO[c]; if (b) b -= PO[c]; }
+  return '/francais/lire.html?l=' + s + '&c=' + c + '&v=' + a + (b ? '-' + b : '');
+}
 function pick(k){
   cur = k; idx = Math.floor(Math.random()*DATA[k].verses.length);
   [].forEach.call(chipsEl.children, function(c){ c.setAttribute('aria-pressed', c.dataset.k===k ? 'true':'false'); });
