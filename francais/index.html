@@ -183,7 +183,7 @@ form.card[data-tab="home"]+.card[data-tab="home"]{margin-top:8px;padding:8px 14p
 .card.ofr .ofr-b .small{display:block;width:100%}
 .card.ofr .ofr-b .small{display:table!important;width:auto!important;margin:0 auto!important;text-align:left!important;text-align-last:auto!important}
 .card.ofr .ofr-b .small{font-size:min(14px,calc((100vw - 64px)/21))!important;white-space:normal!important;max-width:100%}
-</style>
+.texto p.sel{background:#fbe39a;border-radius:10px;padding:6px 8px;border-left:4px solid #b8892f}</style>
 </head>
 <body>
 <div class="wrap" data-active="home">
@@ -462,13 +462,12 @@ function showRes(b,c,v){
   if(!ch){msg("Impossible de charger le texte. Ouvrez le site en ligne et réessayez.");return;}
   var h=document.createElement("h3");h.textContent=b.n+" "+c+(v?":"+v:"");box.appendChild(h);
   ch.forEach(function(t,i){
-   if(v&&i+1!==v)return;
-   var p=document.createElement("p");p.id=b.s+"-"+c+"-"+(i+1);
+   var p=document.createElement("p");p.id=b.s+"-"+c+"-"+(i+1);if(v&&i+1===v)p.className="sel";
    var nb=document.createElement("b");nb.textContent=(i+1)+" ";p.appendChild(nb);p.appendChild(document.createTextNode(t));box.appendChild(p);
   });
-  if(v){var bt=document.createElement("button");bt.type="button";bt.className="go alt more";bt.textContent="📖 Lire tout le chapitre "+c;bt.onclick=function(){showRes(b,c,0)};box.appendChild(bt);}
-  else chapAudio(box,b,c,txt);
-  try{box.scrollIntoView({block:"nearest"})}catch(x){}
+  chapAudio(box,b,c,txt);
+  var lr=document.createElement("a");lr.className="go";lr.href="/francais/lire.html?l="+b.s+"&c="+c+(v?"&v="+v:"");lr.textContent="📖 Lire la Bible : "+b.n+" "+c+(v?":"+v:"");box.appendChild(lr);
+  try{var se=v&&document.getElementById(b.s+"-"+c+"-"+v);(se||box).scrollIntoView({block:se?"center":"nearest"})}catch(x){}
  });
 }
 function msg(t){document.getElementById("msg").textContent=t||"";}
