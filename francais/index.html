@@ -419,7 +419,7 @@ function renderHoy(){
     }else{
       var lk=el('a',null,'📖 '+lab);lk.href='/francais/lire.html?l='+k+'&c='+c+'&v='+a;lk.style.fontWeight='bold';w.appendChild(lk);
     }
-    box.appendChild(w);
+    box.appendChild(w);var lk2=el('a','leer','📖 Lire le chapitre '+c+' en entier');lk2.href='/francais/lire.html?l='+k+'&c='+c+'&v='+a+(b>a?'-'+b:'');box.appendChild(lk2);
     HQ.push({t:bookName(k)+', chapitre '+c+', verset'+(b>a?'s '+a+' à '+b:' '+a)+'.',p:w});
     if(t.length){var tx=t.join(' ').replace(/[\[\]]/g,'');words+=tx.split(/\s+/).length;chunks(tx).forEach(function(z){HQ.push({t:z,p:w})})}
   });
