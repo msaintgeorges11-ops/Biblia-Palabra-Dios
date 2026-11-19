@@ -389,12 +389,14 @@ function bookName(slug){for(var i=0;i<B.length;i++)if(B[i].s===slug)return B[i].
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
 function arr(v){return Array.isArray(v)?v:[v]}
 var HQ=[];
+var DIA={};
+function loadDia(k,cb){if(k in DIA)return;DIA[k]=null;try{fetch('/francais/aujourdhui/'+k+'.json').then(function(r){return r.ok?r.json():null}).then(function(j){if(j){DIA[k]=j;cb()}}).catch(function(){})}catch(e){}}
 function renderHoy(){
   var box=document.getElementById('hoyBox');if(!box)return;
   if(AO&&AO.id==='aPlay')aStop();
   var now=new Date(),d=new Date(now),hr=now.getHours(),pm=(hr>=17||hr<5)?1:0;if(hr<5)d.setDate(d.getDate()-1);
   var day=Math.floor(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())/864e5);
-  var key=('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2),ev=EVT[key],x=(!pm&&ev)?ev:HOY[(day*2+pm)%HOY.length];
+  var key=('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2),ev=EVT[key],dd=DIA[key],fx=dd&&dd[pm?'t':'m'],x=fx||((!pm&&ev)?ev:HOY[(day*2+pm)%HOY.length]);loadDia(key,renderHoy);
   var open=pm?"Merci, Seigneur, pour cette journée ; tu nous as fait passer la journée en paix. ":"Merci, Seigneur, pour ce nouveau matin et pour la nuit que tu m'as fait passer en paix. ";
   var f=d.toLocaleDateString('fr',{weekday:'long',day:'numeric',month:'long'}),words=0;
   var need=TEXT_LANG==='fr'?x.v.slice(0,2).map(function(r){return r.split(' ')[0]}).filter(function(k){return !(k in BK)}):[];

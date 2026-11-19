@@ -46,8 +46,8 @@ function loadBook(k,cb){
   var done=function(d){FL[f].d=d;FL[f].q.forEach(function(x){BK[x[0]]=d[FK[x[0]]||x[0]]||[];x[1](BK[x[0]])})};
   try{fetch(f).then(function(r){return r.ok?r.json():{}}).then(done).catch(function(){done({})})}catch(e){done({})}
 }
-function loadDia(k,cb){if(k in DIA)return;DIA[k]=null;try{fetch('/francais/hoy/'+k+'.json').then(function(r){return r.ok?r.json():null}).then(function(j){if(j){DIA[k]=j;cb()}}).catch(function(){})}catch(e){}}
-function loadMes(k,cb){if(k in MES)return;MES[k]=null;try{fetch('/francais/hoy-'+k+'.json').then(function(r){return r.ok?r.json():null}).then(function(j){if(j){MES[k]=j;cb()}}).catch(function(){})}catch(e){}}
+function loadDia(k,cb){if(k in DIA)return;DIA[k]=null;try{fetch('/francais/aujourdhui/'+k+'.json').then(function(r){return r.ok?r.json():null}).then(function(j){if(j){DIA[k]=j;cb()}}).catch(function(){})}catch(e){}}
+function loadMes(k,cb){if(k in MES)return;MES[k]=null;try{fetch('/francais/aujourdhui-'+k+'.json').then(function(r){return r.ok?r.json():null}).then(function(j){if(j){MES[k]=j;cb()}}).catch(function(){})}catch(e){}}
 
 // ---- Audio (igual que en las demás páginas) ----
 var AQ=[],HQ=[],AS=0,AI=0,AT=0,AU=null,AR=null,GEN=false,MP=null,MPK='',RT=.92,PT=1,VSEL='',SRC='';
