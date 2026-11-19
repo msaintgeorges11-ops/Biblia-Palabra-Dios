@@ -485,7 +485,7 @@ document.getElementById("form").addEventListener("submit",function(e){
  if(c<1||c>b.c){msg(b.n+" compte "+b.c+" chapitre"+(b.c>1?"s":"")+".");return;}
 
  if(v&&(v<1||v>b.v[c-1])){msg(b.n+" "+c+" compte "+b.v[c-1]+" versets.");return;}
- showRes(b,c,v);
+ location.href="/francais/lire.html?l="+b.s+"&c="+c+(v?"&v="+v:"");
 });
 })();
 </script>
