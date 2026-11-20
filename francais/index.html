@@ -575,7 +575,7 @@ function renderHoy(){
     }else{
       var lk=el('a',null,'📖 '+lab);lk.href='/francais/lire.html?l='+k+'&c='+c+'&v='+a;lk.style.fontWeight='bold';w.appendChild(lk);
     }
-    box.appendChild(w);var lk2=el('a','leer','📖 Lire le chapitre '+c+' en entier');lk2.href='/francais/lire.html?l='+k+'&c='+c+'&v='+a+(b>a?'-'+b:'');box.appendChild(lk2);
+    box.appendChild(w);
     HQ.push({t:bookName(k)+', chapitre '+c+', verset'+(b>a?'s '+a+' à '+b:' '+a)+'.',p:w});
     if(t.length){var tx=t.join(' ').replace(/[\[\]]/g,'');words+=tx.split(/\s+/).length;chunks(tx).forEach(function(z){HQ.push({t:z,p:w})})}
   });
@@ -586,6 +586,7 @@ function renderHoy(){
   sec("🙏 Prière du jour",x.o,open);
   sec("📚 Histoire du jour",x.h);
   sec("✝️ Message du jour",x.m);
+  if(x.c){var cp0=el('p','cierre',x.c);box.appendChild(cp0);words+=x.c.split(/\s+/).length;chunks(x.c).forEach(function(z){HQ.push({t:z,p:cp0})})}
   dur.textContent='⏱ Durée approximative : '+Math.max(1,Math.round(words/150))+' min';
   var WAI='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="vertical-align:-3px;margin-left:6px"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M8.5 7.5c-.3 0-.7.2-.9.6-.3.6-.4 1.4.2 2.5.9 1.7 2.4 3.2 4.2 4 1.2.5 2 .3 2.5-.4.2-.3.3-.6.2-.8l-1.6-.9c-.2-.1-.4 0-.5.1l-.5.6c-.5-.2-1.6-.9-2.2-1.9l.5-.6c.1-.2.1-.4 0-.5l-.8-1.7c-.1-.2-.3-.3-.5-.3z"/></svg>';
   var SU='https://www.biblia-palabra-dios.com/francais/#hoy',ST='📰 '+x.t+' · Bible Parole Dieu';
