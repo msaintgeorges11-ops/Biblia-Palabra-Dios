@@ -30,7 +30,7 @@ function build(){var q=[],root=document.querySelector('.c.ar');
  root.querySelectorAll('h1,h2,p,.vs,li').forEach(function(e){
   if(e.classList.contains('s'))return;
   var t=e.classList.contains('vs')?e.textContent.replace(/^([^«]*)«/,'$1. «'):e.textContent;
-  t=t.replace(/[«»]/g,'').trim();if(!t)return;
+  t=t.replace(/[«»]/g,'').replace(/\s*(\d+):(\d+)\s*[-–]\s*(\d+)/g,', chapitre $1, versets $2 à $3').replace(/\s*(\d+):(\d+)/g,', chapitre $1, verset $2').trim();if(!t)return;
   chunks(t).forEach(function(z){q.push({t:z,p:e})})});
  return q}
 function upd(){btn.textContent=AS===1?'⏹ Arrêter':(AS===2?'▶ Continuer':'🔊 Écouter')}
