@@ -38,10 +38,21 @@ function upd(){btn.textContent=S?(S===1?'\u23f9 Arr\u00eater':'\u25b6 Continuer'
 function fill(){sel.innerHTML='';var L=vL();L.forEach(function(v){var o=document.createElement('option');o.value=vId(v);o.textContent='\ud83c\udf99 '+v.name.replace(/^(Google|Microsoft)\s+/i,'')+' \u00b7 '+v.lang.replace('_','-');sel.appendChild(o)});
  if(!L.length){var o=document.createElement('option');o.value='';o.textContent="\ud83d\udd0a Voix de l'appareil";sel.appendChild(o)}
  var w=VSEL||(L[0]?vId(L[0]):'');sel.value=w;if(sel.value!==w&&sel.options.length)sel.selectedIndex=0;upd()}
+function norm(t){
+ return String(t)
+  .replace(/\b(Jude|Phil[ée]mon|Abdias|[23] Jean)\s+(\d+)(?:\s?[-–—]\s?(\d+))?(?![\d:])/g,function(m,b,v1,v2){return b+(v2?' versets '+v1+' à '+v2:' verset '+v1)})
+  .replace(/\b([Ee])n (?=\d+\s?:\s?\d)/g,function(m,e){return (e==='E'?'Au':'au')+' chapitre '})
+  .replace(/(\b(?:Psaumes?|chapitres?)\s+)?(\d+)\s?:\s?(\d+)(?:\s?[-–—]\s?(\d+)(?:\s?:\s?(\d+))?)?(?:,(\d+)(?!\d))?/gi,function(m,pre,c,v1,a,b,x){
+   var h=(pre||'chapitre ')+c+', ';
+   if(x&&!b)return h+'versets '+v1+(a?' à '+a:'')+' et '+x;
+   if(b)return h+'verset '+v1+' jusqu’au chapitre '+a+', verset '+b;
+   if(a)return h+'versets '+v1+' à '+a;
+   return h+'verset '+v1});
+ }
 function chunks(t){var o=[],c='';t.split(/(?<=[.!?:;])\s+/).forEach(function(s){if((c+' '+s).length>200&&c){o.push(c);c=s}else c=c?c+' '+s:s});if(c)o.push(c);return o}
 function speak(){if(S!==1)return;if(I>=Q.length){stop();return}var it=Q[I];
  if(it.p){if(R)R.classList.remove('rd');R=it.p;R.classList.add('rd');try{R.scrollIntoView({block:'center',behavior:'smooth'})}catch(e){}}
- var tk=++T,u=new SpeechSynthesisUtterance(it.t),v=aV();u.lang='fr-CA';if(v){u.voice=v;u.lang=v.lang}u.rate=.88;
+ var tk=++T,u=new SpeechSynthesisUtterance(norm(it.t)),v=aV();u.lang='fr-CA';if(v){u.voice=v;u.lang=v.lang}u.rate=.88;
  var nx=function(){if(S===1&&tk===T){I++;speak()}};u.onend=nx;u.onerror=nx;speechSynthesis.speak(u)}
 function stop(){S=0;I=0;T++;try{speechSynthesis.cancel()}catch(e){}if(R){R.classList.remove('rd');R=null}upd()}
 function build(){var q=[],c=document.querySelector('.c'),k=c.children,sub=c.querySelector('.s');
