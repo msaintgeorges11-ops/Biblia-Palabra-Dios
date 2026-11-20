@@ -5,7 +5,7 @@ try{VSEL=localStorage.getItem('vozNomFr')||'';SRC=localStorage.getItem('vozSrcFr
 if(SRC==='piper'||SRC==='mp3')SRC='';
 var MAL=/(thomas|paul|henri|antoine|mathieu|nicolas|claude|male|homme|masculin|jean|pierre|daniel|louis|luc|david|bernard|guillaume)/i;
 var FEM=/(female|femme|f[ée]minin|am[ée]lie|hortense|julie|marie|l[ée]a|c[ée]line|denise|brigitte|audrey|vivienne|[ée]loise|aur[ée]lie|charlotte|sylvie|virginie)/i;
-function esV(){try{var v=speechSynthesis.getVoices().filter(function(x){return /^fr/i.test(x.lang.replace('_','-'))});v.sort(function(a,b){var r=function(x){return /fr[-_]FR/i.test(x.lang)?0:(/fr[-_](CA|BE|CH)/i.test(x.lang)?1:2)};return r(a)-r(b)});return v}catch(e){return[]}}
+function esV(){try{var v=speechSynthesis.getVoices().filter(function(x){return /^fr/i.test(x.lang.replace('_','-'))});v.sort(function(a,b){var r=function(x){return /fr[-_]CA/i.test(x.lang)?0:(/fr[-_]FR/i.test(x.lang)?1:2)};return r(a)-r(b)});return v}catch(e){return[]}}
 function vK(v){return MAL.test(v.name)?0:(FEM.test(v.name)?2:1)}
 function vL(){return esV().map(function(v,i){return{v:v,i:i}}).sort(function(a,b){return(vK(a.v)-vK(b.v))||(a.i-b.i)}).map(function(x){return x.v})}
 function vId(v){return v.voiceURI||v.name}
@@ -34,7 +34,7 @@ function speak(){
   var p=g.play();if(p&&p.catch)p.catch(function(){});
   var n=Q[I+1];if(n){try{fetch(GURL(n.t)).catch(function(){})}catch(e){}}
   return}
- var tk=++T,u=new SpeechSynthesisUtterance(it.t),v=aVoice();u.lang='fr-FR';
+ var tk=++T,u=new SpeechSynthesisUtterance(it.t),v=aVoice();u.lang='fr-CA';
  if(v){u.voice=v;u.lang=v.lang}u.rate=RT;u.pitch=PT;
  var nx=function(){if(S===1&&tk===T){I++;speak()}};u.onend=nx;u.onerror=nx;speechSynthesis.speak(u)}
 function stop(){S=0;I=0;T++;if(AU){var a=AU;AU=null;try{a.pause()}catch(e){}}try{speechSynthesis.cancel()}catch(e){}if(R){R.classList.remove('rd');R=null}upd()}
