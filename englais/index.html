@@ -238,7 +238,7 @@ form.card[data-tab="home"]+.card[data-tab="home"]{margin-top:8px;padding:8px 14p
   <h2>Support this work 💌</h2>
   <div class="ofr-b">
     <p class="small">God’s Word here is free,<br>ad-free and for everyone. Every gift<br>helps keep this light burning.</p>
-    <a class="btn-of" href="https://www.paypal.com/ncp/payment/VGKXM24EEL6YS" target="_blank" rel="noopener noreferrer">✉️ Give</a>
+    <a class="btn-of" href="https://www.paypal.com/ncp/payment/MUHM8CZM8YJN4" target="_blank" rel="noopener noreferrer">✉️ Give</a>
   </div>
 </div>
 
@@ -407,7 +407,7 @@ form.card[data-tab="home"]+.card[data-tab="home"]{margin-top:8px;padding:8px 14p
     <a class="bk" href="/englais/livre-de-zacharie.html"><span class="bn">📜 ZECHARIAH</span><span class="bc">Your King comes to you</span></a>
     <a class="bk" href="/englais/livre-de-malachie.html"><span class="bn">📜 MALACHI</span><span class="bc">The messenger before the Lord</span></a>
   </div></details>
-<div class="card" data-tab="art"><a class="go" style="margin-top:0" href="/englais/articles.html">📰 See all articles</a></div><div data-tab="art" style="text-align:center;margin:12px auto 0;line-height:1.9"><a href="/francais/" style="color:inherit;text-decoration:underline;font-size:13px;font-weight:600">French version</a> · <a href="/francais/articles.html" style="color:inherit;text-decoration:underline;font-size:13px;font-weight:600">Articles</a><br><a href="/" style="color:inherit;text-decoration:underline;font-size:13px;font-weight:600">Spanish version</a> · <a href="/articulos.html" style="color:inherit;text-decoration:underline;font-size:13px;font-weight:600">Articles</a></div>
+<div class="card" data-tab="art"><a class="go" style="margin-top:0" href="/englais/articles.html">📰 See all articles</a></div><div data-tab="art" style="text-align:center;margin:12px auto 0;line-height:1.9"><span style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#fff;font-size:11px;line-height:1;vertical-align:middle;margin-right:0">🌐</span> <a href="/francais/" style="color:inherit;text-decoration:underline;font-size:13px;font-weight:600">French version</a> · <a href="/francais/articles.html" style="color:inherit;text-decoration:underline;font-size:13px;font-weight:600">Articles</a><br><span style="display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;border-radius:50%;background:#fff;font-size:11px;line-height:1;vertical-align:middle;margin-right:0">🌐</span> <a href="/" style="color:inherit;text-decoration:underline;font-size:13px;font-weight:600">Spanish version</a> · <a href="/articulos.html" style="color:inherit;text-decoration:underline;font-size:13px;font-weight:600">Articles</a></div>
 
 <footer><a href="/englais/">Bible Word God</a> · <a href="https://www.biblia-palabra-dios.com/englais/">Biblia-Palabra-Dios.com</a><br><a href="/englais/how-are-you-feeling-today.html"><b>💛 How are you feeling today? A verse for you</b></a><br><a href="/englais/about.html">About</a> · <a href="/englais/contact.html">Contact</a> · <a href="/englais/privacy.html">Privacy</a></footer>
 </div>
@@ -506,7 +506,7 @@ var FEM=/(female|woman|feminine|samantha|zira|susan|victoria|karen|moira|tessa|f
 function esVoices(){try{var v=window.speechSynthesis.getVoices().filter(function(x){return /^en/i.test(x.lang.replace('_','-'))});
   v.sort(function(a,b){var r=function(x){return /en[-_]US/i.test(x.lang)?0:(/en[-_](GB|CA|AU)/i.test(x.lang)?1:2)};return r(a)-r(b)});return v}catch(e){return[]}}
 function vKind(v){return MAL.test(v.name)?0:(FEM.test(v.name)?2:1)}
-function vList(){return esVoices().map(function(v,i){return{v:v,i:i}}).sort(function(a,b){return (vKind(a.v)-vKind(b.v))||(a.i-b.i)}).map(function(x){return x.v})}
+function vList(){return esVoices().map(function(v,i){return{v:v,i:i}}).sort(function(a,b){var g=function(x){return /en[-_]GB/i.test(x.lang)?0:1};return (g(a.v)-g(b.v))||(vKind(a.v)-vKind(b.v))||(a.i-b.i)}).map(function(x){return x.v})}
 function vId(v){return v.voiceURI||v.name}
 function vLabel(v,n){var k=vKind(v),ic=k===0?'👨 ':(k===2?'👩 ':'🎙 '),nm=v.name.replace(/^(Google|Microsoft)\s+/i,''),u=v.voiceURI&&v.voiceURI!==v.name?' ['+v.voiceURI.replace(/^.*?(en-[a-z0-9]+-x-[a-z0-9]+).*$/i,'$1')+']':'';
   return ic+nm+' · '+v.lang.replace('_','-')+u}
@@ -640,7 +640,7 @@ function renderHoy(){
   box.innerHTML='';HQ=[];
   var h2t=el('h2');h2t.innerHTML='📰 Today’s Article · '+(pm?NOCHE+' Tonight':'🌅 This morning');box.appendChild(h2t);
   box.appendChild(el('p','small',f.charAt(0).toUpperCase()+f.slice(1)));
-  box.appendChild(el('div','tm','Topic: '+x.t));HQ.push({t:'Today’s article. '+(pm?'Tonight.':'This morning.')},{t:f.charAt(0).toUpperCase()+f.slice(1)+'.'},{t:'Topic: '+x.t+'.'});
+  box.appendChild(el('div','tm','Theme: '+x.t));HQ.push({t:'Today’s article. '+(pm?'Tonight.':'This morning.')},{t:f.charAt(0).toUpperCase()+f.slice(1)+'.'},{t:'Theme: '+x.t+'.'});
   var au=el('div','aud');au.innerHTML='<button type="button" id="aPlay" class="aBtn">🔊 Listen</button>';au.appendChild(mkSel(true));
   var dur=el('p','small','');au.appendChild(dur);box.appendChild(au);
   var vh=el('h3',null,'📖 Today’s Verses');box.appendChild(vh);HQ.push({t:'Today’s verses.',p:vh});
