@@ -506,7 +506,7 @@ var FEM=/(female|woman|feminine|samantha|zira|susan|victoria|karen|moira|tessa|f
 function esVoices(){try{var v=window.speechSynthesis.getVoices().filter(function(x){return /^en/i.test(x.lang.replace('_','-'))});
   v.sort(function(a,b){var r=function(x){return /en[-_]US/i.test(x.lang)?0:(/en[-_](GB|CA|AU)/i.test(x.lang)?1:2)};return r(a)-r(b)});return v}catch(e){return[]}}
 function vKind(v){return MAL.test(v.name)?0:(FEM.test(v.name)?2:1)}
-function vList(){return esVoices().map(function(v,i){return{v:v,i:i}}).sort(function(a,b){var g=function(x){return /en[-_]GB/i.test(x.lang)?0:1};return (g(a.v)-g(b.v))||(vKind(a.v)-vKind(b.v))||(a.i-b.i)}).map(function(x){return x.v})}
+function vList(){return esVoices().map(function(v,i){return{v:v,i:i}}).sort(function(a,b){var g=function(x){return /en[-_]US/i.test(x.lang)?0:1};return (g(a.v)-g(b.v))||(vKind(a.v)-vKind(b.v))||(a.i-b.i)}).map(function(x){return x.v})}
 function vId(v){return v.voiceURI||v.name}
 function vLabel(v,n){var k=vKind(v),ic=k===0?'👨 ':(k===2?'👩 ':'🎙 '),nm=v.name.replace(/^(Google|Microsoft)\s+/i,''),u=v.voiceURI&&v.voiceURI!==v.name?' ['+v.voiceURI.replace(/^.*?(en-[a-z0-9]+-x-[a-z0-9]+).*$/i,'$1')+']':'';
   return ic+nm+' · '+v.lang.replace('_','-')+u}
