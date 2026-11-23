@@ -196,6 +196,7 @@ var DATA = {
   }
 };
 
+var PAGE_URL = 'https://www.biblia-palabra-dios.com/francais/comment-vous-sentez-vous.html';
 var chipsEl = document.getElementById('chips');
 var cur = null, idx = 0;
 
@@ -228,7 +229,7 @@ function show(){
   document.getElementById('ref').textContent = v.ref;
   document.getElementById('txt').textContent = '“' + v.txt + '”';
   var text = v.ref + ': ' + v.txt + ' — biblia-palabra-dios.com';
-  var url = location.href.split('#')[0];
+  var url = PAGE_URL;
   document.getElementById('wa').href = 'https://wa.me/?text=' + encodeURIComponent(text + ' ' + url);
   document.getElementById('fb').href = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url);
   document.getElementById('read').href = bibleUrl(v.ref);
@@ -276,7 +277,7 @@ function makeImage(cb){
 document.getElementById('share').addEventListener('click', function(){
   var msg = document.getElementById('msg');
   var v = DATA[cur].verses[idx];
-  var text = v.ref + ': ' + v.txt + ' — biblia-palabra-dios.com';
+  var text = v.ref + ': ' + v.txt + '\n\n👉 ' + PAGE_URL;
   makeImage(function(blob){
     var file;
     try { file = new File([blob], 'verset.png', {type:'image/png'}); } catch(e) { file = null; }
