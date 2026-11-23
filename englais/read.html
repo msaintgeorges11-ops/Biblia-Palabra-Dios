@@ -1,112 +1,78 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Read the Bible · Biblia Palabra Dios</title>
-<meta name="description" content="Read the Bible for free at biblia-palabra-dios.com">
-<link rel="canonical" href="https://www.biblia-palabra-dios.com/englais/read.html">
-<meta name="theme-color" content="#ffffff">
-<style>
-:root{--y:linear-gradient(180deg,#fcc93f 0%,#f7b82c 100%);--b:#b8892f;--bd:#9d7424;--line:#eadfbf;--muted:#555;--soft:#fbf1d6}
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:#f8c03a;background:radial-gradient(ellipse at 20% 15%,rgba(255,225,130,.55),transparent 55%),radial-gradient(ellipse at 85% 60%,rgba(255,215,110,.35),transparent 50%),linear-gradient(180deg,#f9c43f 0%,#f7bb34 45%,#f2ab26 100%);background-attachment:fixed;min-height:100%}
-body{color:#000;font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center;-webkit-font-smoothing:antialiased}
-.wrap{width:100%;max-width:500px;padding:10px 10px 100px}
-a{color:inherit}
-header{background:#fff;border-radius:20px;padding:16px;text-align:center}
-header h1{font-size:19px;font-weight:bold;letter-spacing:.5px}
-header p{font-size:13px;margin-top:6px;color:var(--muted)}
-.badge{display:inline-block;background:var(--y);color:#000;font-weight:bold;font-size:11px;padding:3px 8px;border-radius:10px;margin-top:8px}
-.card{background:#fff;border-radius:20px;padding:14px;margin-top:12px;text-align:center}
-.card h2{font-size:15px;color:#000;margin-bottom:8px}
-.small{font-size:14px;color:var(--muted);margin-top:6px}
-.hero{max-width:230px;margin:0 auto}
-.hero svg{width:100%;height:auto;display:block}
-.inp{width:100%;padding:12px;font-size:18px;border:2px solid var(--b);border-radius:12px;text-align:center;margin-top:8px;background:#fff;color:#000}
-.inp:focus{outline:none;border-color:var(--bd)}
-button.main{margin-top:12px;width:100%;padding:14px;font-size:16px;font-weight:bold;border:none;border-radius:999px;background:var(--y);color:#000;border:2px solid #fff;box-shadow:0 2px 6px rgba(120,80,0,.3);cursor:pointer}
-#msg{color:#a33;min-height:1.3rem;margin-top:8px;font-size:14px}
-.bk{display:flex;justify-content:space-between;align-items:center;gap:10px;text-decoration:none;background:#fff;border-radius:14px;padding:14px 16px;margin-top:8px;border:1px solid var(--line)}
-.bk .bn{font-weight:bold;font-size:16px;letter-spacing:.04em}
-.bk .bc{color:var(--muted);font-size:13px;white-space:nowrap}
-.bk:active{background:var(--soft)}
-.go{display:block;text-decoration:none;text-align:center;background:var(--y);color:#000;font-weight:bold;border-radius:999px;padding:14px;margin-top:12px;border:2px solid #fff;box-shadow:0 2px 6px rgba(120,80,0,.3)}
-.go.alt{background:#fff;color:#000;border:2px solid #f7b82c}
-.btn-of{display:inline-block;text-decoration:none;font-size:17px;font-weight:bold;color:#000;background:var(--y);padding:12px 26px;border-radius:999px;margin-top:10px;border:2px solid #fff;box-shadow:0 2px 6px rgba(120,80,0,.3)}
-.disc,footer{font-size:13px;color:#3a2a00;text-align:center;line-height:1.6;margin-top:14px}
-footer a{color:#3a2a00}
-.wrap[data-active="home"] [data-tab]:not([data-tab="home"]),
-.wrap[data-active="nt"] [data-tab]:not([data-tab="nt"]),
-.wrap[data-active="at"] [data-tab]:not([data-tab="at"]),
-.wrap[data-active="art"] [data-tab]:not([data-tab="art"]),
-.wrap[data-active="of"] [data-tab]:not([data-tab="of"]){display:none!important}
-.wrap[data-active="hoy"] [data-tab]:not([data-tab="hoy"]){display:none!important}
-.hoy h3{font-size:15px;margin:14px 0 4px;color:var(--bd)}
-.hoy p{text-align:left;font-size:15px;line-height:1.55;margin-top:6px}
-.hoy .vs{background:var(--soft);border-radius:12px;padding:10px 12px;margin-top:8px}
-.hoy .vs b{display:block;font-size:13px;color:var(--bd);margin-bottom:2px}
-.aud{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:8px 0 4px;position:sticky;top:6px;z-index:5;background:#fff;padding:6px 0}
-.aud button{width:100%;max-width:300px;font-size:17px!important;border:2px solid #fff;background:var(--y);color:#000;font-weight:bold;font-size:15px;border-radius:999px;padding:10px 14px;box-shadow:0 2px 6px rgba(120,80,0,.3);cursor:pointer}
-.aud .small{flex-basis:100%;margin:0;text-align:center}
-.hoy .tm{font-size:19px;font-weight:bold;margin:2px 0 4px}
-.tabs{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;justify-content:center;background:var(--y);border-top:2px solid #fff3c4;box-shadow:0 -4px 14px rgba(120,80,0,.25);padding:8px 6px calc(8px + env(safe-area-inset-bottom,0px))}
-.tabs button{flex:1;max-width:100px;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;color:#000;font-weight:bold}
-.tabs button span{display:block;padding:6px 16px;border-radius:999px;font-size:20px;line-height:1;background:#fff;border:2px solid #fff;box-shadow:0 2px 5px rgba(120,80,0,.3)}
-.tabs button small{font-size:10px;line-height:1.1;text-align:center;color:#000;font-weight:bold}
-.tabs button.on span{border-color:#000}
-.libro{background:#fff;border-radius:16px;margin-top:10px;overflow:hidden;border:2px solid #fff;box-shadow:0 2px 6px rgba(120,80,0,.25)}
-.libro[open]{border-color:#f7b82c}
-.libro>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 16px;background:#fff}
-.libro summary::-webkit-details-marker{display:none}
-.libro>summary::after{content:"＋";font-size:22px;line-height:1;font-weight:bold;margin-left:6px}
-.libro[open]>summary::after{content:"－"}
-.libro .bn{font-weight:bold;font-size:16px;letter-spacing:.04em;margin-right:auto}
-.libro .bc{font-size:13px;color:#000;white-space:nowrap}
-.caps{padding:6px 10px 12px}
-.cap{border-top:1px dashed var(--line)}
-.cap>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;padding:12px 6px;font-weight:bold;font-size:15px}
-.cap>summary::-webkit-details-marker{display:none}
-.cap>summary::after{content:"＋";color:var(--bd);font-size:18px}
-.cap[open]>summary::after{content:"－"}
-.cap small{font-weight:normal;color:var(--muted);font-size:13px}
-.leer{display:block;text-decoration:none;text-align:center;background:var(--y);color:#000;font-weight:bold;border-radius:999px;padding:10px;margin:2px 0 10px;border:2px solid #fff;box-shadow:0 2px 5px rgba(120,80,0,.25)}
-.vs{display:flex;flex-wrap:wrap;gap:6px;padding-bottom:10px}
-.vs a{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:42px;padding:0 6px;font-size:15px;font-weight:bold;text-decoration:none;color:#000;background:#fff;border:2px solid #f7b82c;border-radius:10px}
-.vs a:active{background:#f7b82c}
-.texto{padding:2px 6px 14px;font-size:16px;line-height:1.7;text-align:left}
-.texto p,.texto div{margin:0 0 8px}
-.texto sup,.texto .num,.texto b,.texto strong{color:var(--bd)}
-.texto a{text-decoration:none}
-.texto h2,.texto h3{font-size:16px;margin:8px 0}
-a.cap{display:flex;justify-content:space-between;align-items:center;padding:12px 6px;font-weight:bold;font-size:15px;text-decoration:none;color:#000;border-top:1px dashed var(--line)}
-a.cap i{font-style:normal;color:var(--bd);font-size:22px;line-height:1}
-a.cap:active{background:var(--soft)}
-details.cap{border-top:1px dashed var(--line)}
-.texto p{margin:0 0 10px}
-.texto b{margin-right:2px}
-
-.nav2{display:flex;gap:8px;margin-top:12px}.nav2 a{flex:1;margin:0}
-.texto p.sel{background:var(--soft);border-radius:10px;padding:6px 8px}
-</style></head><body><div class="wrap" data-active="home">
-<header><h1 id="h">Loading…</h1><p>biblia-palabra-dios.com</p></header>
-<div class="card"><div class="texto" id="t">Loading…</div>
-<div class="nav2"><a class="go alt" id="pv" href="#" hidden>‹ Previous</a><a class="go alt" id="nx" href="#" hidden>Next ›</a></div>
-<a class="go" href="/englais/">🏠 Back to home</a></div>
-<footer>Biblia Palabra Dios · biblia-palabra-dios.com<br><a href="/englais/how-are-you-feeling-today.html"><b>💛 How are you feeling today? A verse for you</b></a><br><a href="/englais/about.html">About</a> · <a href="/englais/contact.html">Contact</a> · <a href="/englais/privacy.html">Privacy</a></footer></div>
-<script>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Read the Bible Online | Bible Word God</title><meta name="description" content="Read the Bible in English, book by book and chapter by chapter, with audio listening."><link rel="canonical" href="https://www.biblia-palabra-dios.com/englais/read.html"><link rel="alternate" hreflang="fr" href="https://www.biblia-palabra-dios.com/francais/lire.html"><link rel="alternate" hreflang="es" href="https://www.biblia-palabra-dios.com/leer.html"><link rel="alternate" hreflang="en" href="https://www.biblia-palabra-dios.com/englais/read.html"><meta property="og:type" content="website"><meta property="og:locale" content="en_US"><meta property="og:site_name" content="Bible Word God"><meta property="og:title" content="Read the Bible Online | Bible Word God"><meta property="og:description" content="Read the Bible in English, book by book and chapter by chapter, with audio listening."><meta property="og:url" content="https://www.biblia-palabra-dios.com/englais/read.html"><meta property="og:image" content="https://www.biblia-palabra-dios.com/og-image.jpg"><meta name="theme-color" content="#ffffff"><link rel="icon" type="image/png" href="/icon-192.png"><style>*{box-sizing:border-box;margin:0;padding:0}body{background:#f8c03a;color:#000;font-family:Arial,Helvetica,sans-serif;display:flex;justify-content:center;-webkit-font-smoothing:antialiased}.w{width:100%;max-width:560px;padding:10px 10px 40px}.c{background:#fff;border-radius:20px;padding:16px;margin-top:12px}h1{font-size:22px;text-align:center}h2{font-size:16px;color:#9d7424;margin:16px 0 6px}p{font-size:16px;line-height:1.6;margin-top:6px}.s{text-align:center;color:#555;font-size:14px;margin-top:6px}.nv{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:center;padding:14px 4px 4px}.nv a{color:#000;font-weight:bold;font-size:15px;text-decoration:underline}.go{display:block;text-decoration:none;text-align:center;background:linear-gradient(180deg,#fcc93f,#f7b82c);color:#000;font-weight:bold;border-radius:999px;padding:14px;margin-top:12px;border:2px solid #fff}.go.alt{background:#fff;border-color:#f7b82c}.bk{display:flex;justify-content:space-between;gap:10px;text-decoration:none;color:#000;border:1px solid #eadfbf;border-radius:14px;padding:14px 16px;margin-top:8px}.bk b{letter-spacing:.04em}.bk span{color:#555;font-size:13px}.c>h2:first-child{margin-top:0}[hidden]{display:none!important}
+.sel{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.sel select{flex:1 1 140px;font-size:16px;padding:11px 10px;border:2px solid #b8892f;border-radius:12px;background:#fff;color:#000;font-family:inherit}
+.texto{font-size:17px;line-height:1.75;text-align:left;margin-top:10px}
+.texto p{margin:0 0 10px;padding:2px 6px;border-radius:8px;cursor:pointer}
+.texto b{color:#9d7424;margin-right:4px}
+.texto p.sel{display:block;gap:0;margin-top:0;background:#fbe39a;border-left:4px solid #b8892f}
+.texto p.rd{background:#fbf1d6;box-shadow:0 0 0 4px #fbf1d6}
+.br2{display:flex;gap:8px}.br2 .go{flex:1;margin-top:12px;font-size:15px;padding:12px 8px}
+.aud{margin-top:12px}
+.aBtn{width:100%;font-family:inherit;font-size:16px;font-weight:bold;cursor:pointer;background:linear-gradient(180deg,#fcc93f,#f7b82c);color:#000;border:2px solid #fff;border-radius:999px;padding:12px}
+@media(prefers-color-scheme:dark){body{background:#2a2110}.nv a{color:#f3ead2}.c{background:#1f1a10;color:#f3ead2}h2{color:#f7b82c}.s,.bk span{color:#bbb}.bk{color:#f3ead2;border-color:#4a3d1c}.go.alt{background:#1f1a10;color:#f3ead2}.sel select{background:#1f1a10;color:#f3ead2}.texto p.sel{background:#4a3d1c}.texto p.rd{background:#4a3d1c;box-shadow:0 0 0 4px #4a3d1c}.texto b{color:#f7b82c}.aBtn{color:#000}}
+.ft{display:block;text-align:center;font-size:14px;line-height:1.9;padding:18px 4px 4px;color:#000}.ft a{color:#000;font-weight:bold;text-decoration:underline}@media(prefers-color-scheme:dark){.ft,.ft a{color:#f3ead2}}</style></head><body><div class="w"><nav class="nv"><a href="/englais/">Home</a><a href="/englais/about.html">About</a><a href="/englais/contact.html">Contact</a><a href="/englais/privacy.html">Privacy</a></nav><div class="c"><h1 id="ttl">📖 READ THE BIBLE</h1><p class="s" id="sub">Choose a book to begin</p><div id="hub"><h2>📜 Old Testament</h2><a class="bk" href="/englais/read.html?l=genesis&amp;c=1"><b>GENESIS</b><span>50 chapters</span></a><a class="bk" href="/englais/read.html?l=exodus&amp;c=1"><b>EXODUS</b><span>40 chapters</span></a><a class="bk" href="/englais/read.html?l=leviticus&amp;c=1"><b>LEVITICUS</b><span>27 chapters</span></a><a class="bk" href="/englais/read.html?l=numbers&amp;c=1"><b>NUMBERS</b><span>36 chapters</span></a><a class="bk" href="/englais/read.html?l=deuteronomy&amp;c=1"><b>DEUTERONOMY</b><span>34 chapters</span></a><a class="bk" href="/englais/read.html?l=joshua&amp;c=1"><b>JOSHUA</b><span>24 chapters</span></a><a class="bk" href="/englais/read.html?l=judges&amp;c=1"><b>JUDGES</b><span>21 chapters</span></a><a class="bk" href="/englais/read.html?l=ruth&amp;c=1"><b>RUTH</b><span>4 chapters</span></a><a class="bk" href="/englais/read.html?l=1-samuel&amp;c=1"><b>1 SAMUEL</b><span>31 chapters</span></a><a class="bk" href="/englais/read.html?l=2-samuel&amp;c=1"><b>2 SAMUEL</b><span>24 chapters</span></a><a class="bk" href="/englais/read.html?l=1-kings&amp;c=1"><b>1 KINGS</b><span>22 chapters</span></a><a class="bk" href="/englais/read.html?l=2-kings&amp;c=1"><b>2 KINGS</b><span>25 chapters</span></a><a class="bk" href="/englais/read.html?l=1-chronicles&amp;c=1"><b>1 CHRONICLES</b><span>29 chapters</span></a><a class="bk" href="/englais/read.html?l=2-chronicles&amp;c=1"><b>2 CHRONICLES</b><span>36 chapters</span></a><a class="bk" href="/englais/read.html?l=ezra&amp;c=1"><b>EZRA</b><span>10 chapters</span></a><a class="bk" href="/englais/read.html?l=nehemiah&amp;c=1"><b>NEHEMIAH</b><span>13 chapters</span></a><a class="bk" href="/englais/read.html?l=esther&amp;c=1"><b>ESTHER</b><span>10 chapters</span></a><a class="bk" href="/englais/read.html?l=job&amp;c=1"><b>JOB</b><span>42 chapters</span></a><a class="bk" href="/englais/read.html?l=psalms&amp;c=1"><b>PSALMS</b><span>150 chapters</span></a><a class="bk" href="/englais/read.html?l=proverbs&amp;c=1"><b>PROVERBS</b><span>31 chapters</span></a><a class="bk" href="/englais/read.html?l=ecclesiastes&amp;c=1"><b>ECCLESIASTES</b><span>12 chapters</span></a><a class="bk" href="/englais/read.html?l=song-of-solomon&amp;c=1"><b>SONG OF SOLOMON</b><span>8 chapters</span></a><a class="bk" href="/englais/read.html?l=isaiah&amp;c=1"><b>ISAIAH</b><span>66 chapters</span></a><a class="bk" href="/englais/read.html?l=jeremiah&amp;c=1"><b>JEREMIAH</b><span>52 chapters</span></a><a class="bk" href="/englais/read.html?l=lamentations&amp;c=1"><b>LAMENTATIONS</b><span>5 chapters</span></a><a class="bk" href="/englais/read.html?l=ezekiel&amp;c=1"><b>EZEKIEL</b><span>48 chapters</span></a><a class="bk" href="/englais/read.html?l=daniel&amp;c=1"><b>DANIEL</b><span>12 chapters</span></a><a class="bk" href="/englais/read.html?l=hosea&amp;c=1"><b>HOSEA</b><span>14 chapters</span></a><a class="bk" href="/englais/read.html?l=joel&amp;c=1"><b>JOEL</b><span>3 chapters</span></a><a class="bk" href="/englais/read.html?l=amos&amp;c=1"><b>AMOS</b><span>9 chapters</span></a><a class="bk" href="/englais/read.html?l=obadiah&amp;c=1"><b>OBADIAH</b><span>1 chapter</span></a><a class="bk" href="/englais/read.html?l=jonah&amp;c=1"><b>JONAH</b><span>4 chapters</span></a><a class="bk" href="/englais/read.html?l=micah&amp;c=1"><b>MICAH</b><span>7 chapters</span></a><a class="bk" href="/englais/read.html?l=nahum&amp;c=1"><b>NAHUM</b><span>3 chapters</span></a><a class="bk" href="/englais/read.html?l=habakkuk&amp;c=1"><b>HABAKKUK</b><span>3 chapters</span></a><a class="bk" href="/englais/read.html?l=zephaniah&amp;c=1"><b>ZEPHANIAH</b><span>3 chapters</span></a><a class="bk" href="/englais/read.html?l=haggai&amp;c=1"><b>HAGGAI</b><span>2 chapters</span></a><a class="bk" href="/englais/read.html?l=zechariah&amp;c=1"><b>ZECHARIAH</b><span>14 chapters</span></a><a class="bk" href="/englais/read.html?l=malachi&amp;c=1"><b>MALACHI</b><span>4 chapters</span></a><h2>📖 New Testament</h2><a class="bk" href="/englais/read.html?l=matthew&amp;c=1"><b>MATTHEW</b><span>28 chapters</span></a><a class="bk" href="/englais/read.html?l=mark&amp;c=1"><b>MARK</b><span>16 chapters</span></a><a class="bk" href="/englais/read.html?l=luke&amp;c=1"><b>LUKE</b><span>24 chapters</span></a><a class="bk" href="/englais/read.html?l=john&amp;c=1"><b>JOHN</b><span>21 chapters</span></a><a class="bk" href="/englais/read.html?l=acts&amp;c=1"><b>ACTS</b><span>28 chapters</span></a><a class="bk" href="/englais/read.html?l=romans&amp;c=1"><b>ROMANS</b><span>16 chapters</span></a><a class="bk" href="/englais/read.html?l=1-corinthians&amp;c=1"><b>1 CORINTHIANS</b><span>16 chapters</span></a><a class="bk" href="/englais/read.html?l=2-corinthians&amp;c=1"><b>2 CORINTHIANS</b><span>13 chapters</span></a><a class="bk" href="/englais/read.html?l=galatians&amp;c=1"><b>GALATIANS</b><span>6 chapters</span></a><a class="bk" href="/englais/read.html?l=ephesians&amp;c=1"><b>EPHESIANS</b><span>6 chapters</span></a><a class="bk" href="/englais/read.html?l=philippians&amp;c=1"><b>PHILIPPIANS</b><span>4 chapters</span></a><a class="bk" href="/englais/read.html?l=colossians&amp;c=1"><b>COLOSSIANS</b><span>4 chapters</span></a><a class="bk" href="/englais/read.html?l=1-thessalonians&amp;c=1"><b>1 THESSALONIANS</b><span>5 chapters</span></a><a class="bk" href="/englais/read.html?l=2-thessalonians&amp;c=1"><b>2 THESSALONIANS</b><span>3 chapters</span></a><a class="bk" href="/englais/read.html?l=1-timothy&amp;c=1"><b>1 TIMOTHY</b><span>6 chapters</span></a><a class="bk" href="/englais/read.html?l=2-timothy&amp;c=1"><b>2 TIMOTHY</b><span>4 chapters</span></a><a class="bk" href="/englais/read.html?l=titus&amp;c=1"><b>TITUS</b><span>3 chapters</span></a><a class="bk" href="/englais/read.html?l=philemon&amp;c=1"><b>PHILEMON</b><span>1 chapter</span></a><a class="bk" href="/englais/read.html?l=hebrews&amp;c=1"><b>HEBREWS</b><span>13 chapters</span></a><a class="bk" href="/englais/read.html?l=james&amp;c=1"><b>JAMES</b><span>5 chapters</span></a><a class="bk" href="/englais/read.html?l=1-peter&amp;c=1"><b>1 PETER</b><span>5 chapters</span></a><a class="bk" href="/englais/read.html?l=2-peter&amp;c=1"><b>2 PETER</b><span>3 chapters</span></a><a class="bk" href="/englais/read.html?l=1-john&amp;c=1"><b>1 JOHN</b><span>5 chapters</span></a><a class="bk" href="/englais/read.html?l=2-john&amp;c=1"><b>2 JOHN</b><span>1 chapter</span></a><a class="bk" href="/englais/read.html?l=3-john&amp;c=1"><b>3 JOHN</b><span>1 chapter</span></a><a class="bk" href="/englais/read.html?l=jude&amp;c=1"><b>JUDE</b><span>1 chapter</span></a><a class="bk" href="/englais/read.html?l=revelation&amp;c=1"><b>REVELATION</b><span>22 chapters</span></a></div><div id="rd" hidden><div class="sel"><select id="bsel" aria-label="Book"></select><select id="csel" aria-label="Chapter"></select></div><div id="aud" class="aud" hidden><button type="button" id="aPlay" class="aBtn">🔊 Listen</button></div><div id="txt" class="texto"></div><div class="br2"><a id="prev" class="go alt" href="#">← Previous</a><a id="next" class="go alt" href="#">Next →</a></div></div></div><a class="go alt" href="/englais/">← Home</a><footer class="ft"><a href="/englais/">Bible Word God</a> · biblia-palabra-dios.com<br><a href="/englais/how-are-you-feeling-today.html">💛 How are you feeling today? A verse for you</a><br><a href="/englais/about.html">About</a> · <a href="/englais/contact.html">Contact</a> · <a href="/englais/privacy.html">Privacy</a></footer></div><script>
 (function(){
-var Q=new URLSearchParams(location.search),p=location.pathname.replace(/^\/+|\/+$/g,'').replace(/^englais\/?/,'').split('/'),s=Q.get('l')||p[0],c=parseInt(Q.get('c')||p[1],10)||1,v=parseInt(Q.get('v')||p[2],10)||0;function U(a,b){return '/englais/read.html?l='+a+'&c='+b}
-var t=document.getElementById('t'),h=document.getElementById('h');
-var B=[{"s":"matthew","n":"Matthew","c":28,"v":[25,23,17,25,48,34,29,34,38,42,30,50,58,36,39,28,27,35,30,34,46,46,39,51,46,75,66,20],"t":"n"},{"s":"mark","n":"Mark","c":16,"v":[45,28,35,41,43,56,37,38,50,52,33,44,37,72,47,20],"t":"n"},{"s":"luke","n":"Luke","c":24,"v":[80,52,38,44,39,49,50,56,62,42,54,59,35,35,32,31,37,43,48,47,38,71,56,53],"t":"n"},{"s":"john","n":"John","c":21,"v":[51,25,36,54,47,71,53,59,41,42,57,50,38,31,27,33,26,40,42,31,25],"t":"n"},{"s":"acts","n":"Acts","c":28,"v":[26,47,26,37,42,15,60,40,43,48,30,25,52,28,41,40,34,28,41,38,40,30,35,27,27,32,44,31],"t":"n"},{"s":"romans","n":"Romans","c":16,"v":[32,29,31,25,21,23,25,39,33,21,36,21,14,23,33,27],"t":"n"},{"s":"1-corinthians","n":"1 Corinthians","c":16,"v":[31,16,23,21,13,20,40,13,27,33,34,31,13,40,58,24],"t":"n"},{"s":"2-corinthians","n":"2 Corinthians","c":13,"v":[24,17,18,18,21,18,16,24,15,18,33,21,14],"t":"n"},{"s":"galatians","n":"Galatians","c":6,"v":[24,21,29,31,26,18],"t":"n"},{"s":"ephesians","n":"Ephesians","c":6,"v":[23,22,21,32,33,24],"t":"n"},{"s":"philippians","n":"Philippians","c":4,"v":[30,30,21,23],"t":"n"},{"s":"colossians","n":"Colossians","c":4,"v":[29,23,25,18],"t":"n"},{"s":"1-thessalonians","n":"1 Thessalonians","c":5,"v":[10,20,13,18,28],"t":"n"},{"s":"2-thessalonians","n":"2 Thessalonians","c":3,"v":[12,17,18],"t":"n"},{"s":"1-timothy","n":"1 Timothy","c":6,"v":[20,15,16,16,25,21],"t":"n"},{"s":"2-timothy","n":"2 Timothy","c":4,"v":[18,26,17,22],"t":"n"},{"s":"titus","n":"Titus","c":3,"v":[16,15,15],"t":"n"},{"s":"philemon","n":"Philemon","c":1,"v":[25],"t":"n"},{"s":"hebrews","n":"Hebrews","c":13,"v":[14,18,19,16,14,20,28,13,28,39,40,29,25],"t":"n"},{"s":"james","n":"James","c":5,"v":[27,26,18,17,20],"t":"n"},{"s":"1-peter","n":"1 Peter","c":5,"v":[25,25,22,19,14],"t":"n"},{"s":"2-peter","n":"2 Peter","c":3,"v":[21,22,18],"t":"n"},{"s":"1-john","n":"1 John","c":5,"v":[10,29,24,21,21],"t":"n"},{"s":"2-john","n":"2 John","c":1,"v":[13],"t":"n"},{"s":"3-john","n":"3 John","c":1,"v":[14],"t":"n"},{"s":"jude","n":"Jude","c":1,"v":[25],"t":"n"},{"s":"revelation","n":"Revelation","c":22,"v":[20,29,22,11,14,17,17,13,21,11,19,17,18,20,8,21,18,24,21,15,27,21],"t":"n"},{"s":"genesis","n":"Genesis","c":50,"v":[31,25,24,26,32,22,24,22,29,32,32,20,18,24,21,16,27,33,38,18,34,24,20,67,34,35,46,22,35,43,55,32,20,31,29,43,36,30,23,23,57,38,34,34,28,34,31,22,33,26],"t":"a"},{"s":"exodus","n":"Exodus","c":40,"v":[22,25,22,31,23,30,25,32,35,29,10,51,22,31,27,36,16,27,25,26,36,31,33,18,40,37,21,43,46,38,18,35,23,35,35,38,29,31,43,38],"t":"a"},{"s":"leviticus","n":"Leviticus","c":27,"v":[17,16,17,35,19,30,38,36,24,20,47,8,59,57,33,34,16,30,37,27,24,33,44,23,55,46,34],"t":"a"},{"s":"numbers","n":"Numbers","c":36,"v":[54,34,51,49,31,27,89,26,23,36,35,16,33,45,41,50,13,32,22,29,35,41,30,25,18,65,23,31,40,16,54,42,56,29,34,13],"t":"a"},{"s":"deuteronomy","n":"Deuteronomy","c":34,"v":[46,37,29,49,33,25,26,20,29,22,32,32,18,29,23,22,20,22,21,20,23,30,25,22,19,19,26,68,29,20,30,52,29,12],"t":"a"},{"s":"joshua","n":"Joshua","c":24,"v":[18,24,17,24,15,27,26,35,27,43,23,24,33,15,63,10,18,28,51,9,45,34,16,33],"t":"a"},{"s":"judges","n":"Judges","c":21,"v":[36,23,31,24,31,40,25,35,57,18,40,15,25,20,20,31,13,31,30,48,25],"t":"a"},{"s":"ruth","n":"Ruth","c":4,"v":[22,23,18,22],"t":"a"},{"s":"1-samuel","n":"1 Samuel","c":31,"v":[28,36,21,22,12,21,17,22,27,27,15,25,23,52,35,23,58,30,24,42,15,23,29,22,44,25,12,25,11,31,13],"t":"a"},{"s":"2-samuel","n":"2 Samuel","c":24,"v":[27,32,39,12,25,23,29,18,13,19,27,31,39,33,37,23,29,33,43,26,22,51,39,25],"t":"a"},{"s":"1-kings","n":"1 Kings","c":22,"v":[53,46,28,34,18,38,51,66,28,29,43,33,34,31,34,34,24,46,21,43,29,53],"t":"a"},{"s":"2-kings","n":"2 Kings","c":25,"v":[18,25,27,44,27,33,20,29,37,36,21,21,25,29,38,20,41,37,37,21,26,20,37,20,30],"t":"a"},{"s":"1-chronicles","n":"1 Chronicles","c":29,"v":[54,55,24,43,26,81,40,40,44,14,47,40,14,17,29,43,27,17,19,8,30,19,32,31,31,32,34,21,30],"t":"a"},{"s":"2-chronicles","n":"2 Chronicles","c":36,"v":[17,18,17,22,14,42,22,18,31,19,23,16,22,15,19,14,19,34,11,37,20,12,21,27,28,23,9,27,36,27,21,33,25,33,27,23],"t":"a"},{"s":"ezra","n":"Ezra","c":10,"v":[11,70,13,24,17,22,28,36,15,44],"t":"a"},{"s":"nehemiah","n":"Nehemiah","c":13,"v":[11,20,32,23,19,19,73,18,38,39,36,47,31],"t":"a"},{"s":"esther","n":"Esther","c":10,"v":[22,23,15,17,14,14,10,17,32,3],"t":"a"},{"s":"job","n":"Job","c":42,"v":[22,13,26,21,27,30,21,22,35,22,20,25,28,22,35,22,16,21,29,29,34,30,17,25,6,14,23,28,25,31,40,22,33,37,16,33,24,41,30,24,34,17],"t":"a"},{"s":"psalms","n":"Psalms","c":150,"v":[6,12,8,8,12,10,17,9,20,18,7,8,6,7,5,11,15,50,14,9,13,31,6,10,22,12,14,9,11,12,24,11,22,22,28,12,40,22,13,17,13,11,5,26,17,11,9,14,20,23,19,9,6,7,23,13,11,11,17,12,8,12,11,10,13,20,7,35,36,5,24,20,28,23,10,12,20,72,13,19,16,8,18,12,13,17,7,18,52,17,16,15,5,23,11,13,12,9,9,5,8,28,22,35,45,48,43,13,31,7,10,10,9,8,18,19,2,29,176,7,8,9,4,8,5,6,5,6,8,8,3,18,3,3,21,26,9,8,24,13,10,7,12,15,21,10,20,14,9,6],"t":"a"},{"s":"proverbs","n":"Proverbs","c":31,"v":[33,22,35,27,23,35,27,36,18,32,31,28,25,35,33,33,28,24,29,30,31,29,35,34,28,28,27,28,27,33,31],"t":"a"},{"s":"ecclesiastes","n":"Ecclesiastes","c":12,"v":[18,26,22,16,20,12,29,17,18,20,10,14],"t":"a"},{"s":"song-of-solomon","n":"Song of Solomon","c":8,"v":[17,17,11,16,16,13,13,14],"t":"a"},{"s":"isaiah","n":"Isaiah","c":66,"v":[31,22,26,6,30,13,25,22,21,34,16,6,22,32,9,14,14,7,25,6,17,25,18,23,12,21,13,29,24,33,9,20,24,17,10,22,38,22,8,31,29,25,28,28,25,13,15,22,26,11,23,15,12,17,13,12,21,14,21,22,11,12,19,12,25,24],"t":"a"},{"s":"jeremiah","n":"Jeremiah","c":52,"v":[19,37,25,31,31,30,34,22,26,25,23,17,27,22,21,21,27,23,15,18,14,30,40,10,38,24,22,17,32,24,40,44,26,22,19,32,21,28,18,16,18,22,13,30,5,28,7,47,39,46,64,34],"t":"a"},{"s":"lamentations","n":"Lamentations","c":5,"v":[22,22,66,22,22],"t":"a"},{"s":"ezekiel","n":"Ezekiel","c":48,"v":[28,10,27,17,17,14,27,18,11,22,25,28,23,23,8,63,24,32,14,49,32,31,49,27,17,21,36,26,21,26,18,32,33,31,15,38,28,23,29,49,26,20,27,31,25,24,23,35],"t":"a"},{"s":"daniel","n":"Daniel","c":12,"v":[21,49,30,37,31,28,28,27,27,21,45,13],"t":"a"},{"s":"hosea","n":"Hosea","c":14,"v":[11,23,5,19,15,11,16,14,17,15,12,14,16,9],"t":"a"},{"s":"joel","n":"Joel","c":3,"v":[20,32,21],"t":"a"},{"s":"amos","n":"Amos","c":9,"v":[15,16,15,13,27,14,17,14,15],"t":"a"},{"s":"obadiah","n":"Obadiah","c":1,"v":[21],"t":"a"},{"s":"jonah","n":"Jonah","c":4,"v":[17,10,10,11],"t":"a"},{"s":"micah","n":"Micah","c":7,"v":[16,13,12,13,15,16,20],"t":"a"},{"s":"nahum","n":"Nahum","c":3,"v":[15,13,19],"t":"a"},{"s":"habakkuk","n":"Habakkuk","c":3,"v":[17,20,19],"t":"a"},{"s":"zephaniah","n":"Zephaniah","c":3,"v":[18,15,20],"t":"a"},{"s":"haggai","n":"Haggai","c":2,"v":[15,23],"t":"a"},{"s":"zechariah","n":"Zechariah","c":14,"v":[21,13,10,14,11,15,14,23,17,12,17,14,9,21],"t":"a"},{"s":"malachi","n":"Malachi","c":4,"v":[14,17,18,6],"t":"a"}],b0;for(var z=0;z<B.length;z++)if(B[z].s===s)b0=B[z];
-fetch(b0&&b0.t==='n'?'/bible-nt-en.json':'/bible-ot-en.json').then(function(r){return r.json()}).then(function(D){
-  var T=D[s]||D[s.replace(/-/g,'')]||[],i,b;for(i=0;i<B.length;i++)if(B[i].s===s){b=B[i];break}
-  if(!b||!T[c-1]){h.textContent='Not found';t.innerHTML='<p>We could not find that passage.</p>';return}
-  h.textContent=b.n+' '+c+(v?':'+v:'');document.title=b.n+' '+c+(v?':'+v:'')+' · Bible · biblia-palabra-dios.com';
-  t.textContent='';
-  T[c-1].forEach(function(x,k){var q=document.createElement('p');q.id='v'+(k+1);if(v===k+1)q.className='sel';
-    var n=document.createElement('b');n.textContent=(k+1)+' ';q.appendChild(n);q.appendChild(document.createTextNode(x));t.appendChild(q)});
-  if(v){var e=document.getElementById('v'+v);if(e)e.scrollIntoView({block:'center'})}
-  var pv=document.getElementById('pv'),nx=document.getElementById('nx'),k=B.indexOf(b);
-  if(c>1){pv.href=U(s,c-1);pv.hidden=false}else if(k>0){pv.href=U(B[k-1].s,B[k-1].c);pv.hidden=false;pv.textContent='‹ '+B[k-1].n}
-  if(c<b.c){nx.href=U(s,c+1);nx.hidden=false}else if(k<B.length-1){nx.href=U(B[k+1].s,1);nx.hidden=false;nx.textContent=B[k+1].n+' ›'}
-}).catch(function(){h.textContent='Error';t.textContent='Could not load.'});
+var BK=[["genesis","Genesis",50,"a"],["exodus","Exodus",40,"a"],["leviticus","Leviticus",27,"a"],["numbers","Numbers",36,"a"],["deuteronomy","Deuteronomy",34,"a"],["joshua","Joshua",24,"a"],["judges","Judges",21,"a"],["ruth","Ruth",4,"a"],["1-samuel","1 Samuel",31,"a"],["2-samuel","2 Samuel",24,"a"],["1-kings","1 Kings",22,"a"],["2-kings","2 Kings",25,"a"],["1-chronicles","1 Chronicles",29,"a"],["2-chronicles","2 Chronicles",36,"a"],["ezra","Ezra",10,"a"],["nehemiah","Nehemiah",13,"a"],["esther","Esther",10,"a"],["job","Job",42,"a"],["psalms","Psalms",150,"a"],["proverbs","Proverbs",31,"a"],["ecclesiastes","Ecclesiastes",12,"a"],["song-of-solomon","Song of Solomon",8,"a"],["isaiah","Isaiah",66,"a"],["jeremiah","Jeremiah",52,"a"],["lamentations","Lamentations",5,"a"],["ezekiel","Ezekiel",48,"a"],["daniel","Daniel",12,"a"],["hosea","Hosea",14,"a"],["joel","Joel",3,"a"],["amos","Amos",9,"a"],["obadiah","Obadiah",1,"a"],["jonah","Jonah",4,"a"],["micah","Micah",7,"a"],["nahum","Nahum",3,"a"],["habakkuk","Habakkuk",3,"a"],["zephaniah","Zephaniah",3,"a"],["haggai","Haggai",2,"a"],["zechariah","Zechariah",14,"a"],["malachi","Malachi",4,"a"],["matthew","Matthew",28,"n"],["mark","Mark",16,"n"],["luke","Luke",24,"n"],["john","John",21,"n"],["acts","Acts",28,"n"],["romans","Romans",16,"n"],["1-corinthians","1 Corinthians",16,"n"],["2-corinthians","2 Corinthians",13,"n"],["galatians","Galatians",6,"n"],["ephesians","Ephesians",6,"n"],["philippians","Philippians",4,"n"],["colossians","Colossians",4,"n"],["1-thessalonians","1 Thessalonians",5,"n"],["2-thessalonians","2 Thessalonians",3,"n"],["1-timothy","1 Timothy",6,"n"],["2-timothy","2 Timothy",4,"n"],["titus","Titus",3,"n"],["philemon","Philemon",1,"n"],["hebrews","Hebrews",13,"n"],["james","James",5,"n"],["1-peter","1 Peter",5,"n"],["2-peter","2 Peter",3,"n"],["1-john","1 John",5,"n"],["2-john","2 John",1,"n"],["3-john","3 John",1,"n"],["jude","Jude",1,"n"],["revelation","Revelation",22,"n"]];
+function $(i){return document.getElementById(i)}
+var Q=new URLSearchParams(location.search);
+var pp=location.pathname.replace(/^\/+|\/+$/g,'').replace(/^englais\/?/,'').split('/');
+var slug=Q.get('l')||(pp[0]&&pp[0]!=='read.html'?pp[0]:'');
+var cc=parseInt(Q.get('c')||pp[1],10);
+var vraw=Q.get('v')||pp[2]||'';
+var idx=-1;BK.forEach(function(b,i){if(b[0]===slug)idx=i});
+if(idx<0){return}
+var b=BK[idx],c=cc;if(!(c>=1&&c<=b[2]))c=1;
+var vm=String(vraw).match(/^(\d+)(?:-(\d+))?$/),va=vm?+vm[1]:0,vb=vm?+(vm[2]||vm[1]):0;
+$('hub').hidden=true;$('rd').hidden=false;
+function href(i,ch){return '?l='+BK[i][0]+'&c='+ch}
+var bsel=$('bsel'),csel=$('csel');
+BK.forEach(function(x,i){var o=document.createElement('option');o.value=i;o.textContent=x[1];if(i===idx)o.selected=true;bsel.appendChild(o)});
+for(var k=1;k<=b[2];k++){var o=document.createElement('option');o.value=k;o.textContent='Chapter '+k;if(k===c)o.selected=true;csel.appendChild(o)}
+bsel.onchange=function(){location.href=href(+bsel.value,1)};
+csel.onchange=function(){location.href=href(idx,+csel.value)};
+var title=b[1]+' '+c;$('ttl').textContent='📖 '+title;document.title=title+' | Bible Word God';
+$('sub').textContent=b[1]+' · chapter '+c+' of '+b[2];
+var pv=$('prev'),nx=$('next');
+if(c>1)pv.href=href(idx,c-1);else if(idx>0&&BK[idx-1][3]===b[3])pv.href=href(idx-1,BK[idx-1][2]);else if(idx>0)pv.href=href(idx-1,BK[idx-1][2]);else pv.hidden=true;
+if(c<b[2])nx.href=href(idx,c+1);else if(idx<BK.length-1)nx.href=href(idx+1,1);else nx.hidden=true;
+var box=$('txt'),paras=[],verses=[];
+var f=b[3]==='n'?'/bible-nt-en.json':'/bible-ot-en.json';
+box.textContent='Loading…';
+fetch(f).then(function(r){return r.ok?r.json():{}}).catch(function(){return {}}).then(function(d){
+ var bk=d[b[0]]||d[b[0].replace(/-/g,'')],ch=bk&&bk[c-1];
+ if(!ch){box.textContent='Could not load the text. Check your connection and try again.';return}
+ box.textContent='';verses=ch;
+ ch.forEach(function(v,i){var p=document.createElement('p');p.id='v'+(i+1);var n=document.createElement('b');n.textContent=(i+1)+' ';p.appendChild(n);p.appendChild(document.createTextNode(v));
+  if(va&&i+1>=va&&i+1<=vb)p.className='sel';
+  p.onclick=function(){p.classList.toggle('sel')};box.appendChild(p);paras.push(p)});
+ if(va&&$('v'+va)){setTimeout(function(){try{$('v'+va).scrollIntoView({block:'center'})}catch(e){}},50)}
+ $('aud').hidden=false;
+});
+var S=0,I=0,T=0,Q2=[],R=null,btn=$('aPlay');
+function voice(){try{var all=speechSynthesis.getVoices().filter(function(x){return /^en/i.test(x.lang.replace('_','-'))});var w='';try{w=localStorage.getItem('voixNom-en')||''}catch(e){}
+ var v=w&&all.filter(function(x){return(x.voiceURI||x.name)===w})[0];all.sort(function(x,y){return(/en[-_]US/i.test(x.lang)?0:1)-(/en[-_]US/i.test(y.lang)?0:1)});return v||all[0]||null}catch(e){return null}}
+function norm(t){
+ return String(t)
+  .replace(/\b(Jude|Philemon|Obadiah|[23] John)\s+(\d+)(?:\s?[-–—]\s?(\d+))?(?![\d:])/g,function(m,bk,v1,v2){return bk+(v2?', verses '+v1+' to '+v2:', verse '+v1)})
+  .replace(/(\d+)\s?:\s?(\d+)(?:\s?[-–—]\s?(\d+)(?:\s?:\s?(\d+))?)?/g,function(m,c,v1,a,bb){
+   var h='chapter '+c+', ';
+   if(bb)return h+'verse '+v1+' through chapter '+a+', verse '+bb;
+   if(a)return h+'verses '+v1+' to '+a;
+   return h+'verse '+v1})}
+function chunks(t){var o=[],c='';t.split(/(?<=[.!?:;])\s+/).forEach(function(s){if((c+' '+s).length>200&&c){o.push(c);c=s}else c=c?c+' '+s:s});if(c)o.push(c);return o}
+function upd(){btn.textContent=S?(S===1?'⏹ Stop':'▶ Resume'):'🔊 Listen'}
+function speak(){if(S!==1)return;if(I>=Q2.length){stop();return}var it=Q2[I];
+ if(it.p){if(R)R.classList.remove('rd');R=it.p;R.classList.add('rd');try{R.scrollIntoView({block:'center',behavior:'smooth'})}catch(e){}}
+ var tk=++T,u=new SpeechSynthesisUtterance(norm(it.t)),v=voice();u.lang='en-US';if(v){u.voice=v;u.lang=v.lang}u.rate=.95;
+ var n=function(){if(S===1&&tk===T){I++;speak()}};u.onend=n;u.onerror=n;speechSynthesis.speak(u)}
+function stop(){S=0;I=0;T++;try{speechSynthesis.cancel()}catch(e){}if(R){R.classList.remove('rd');R=null}upd()}
+btn.onclick=function(){
+ if(!('speechSynthesis' in window)){alert("Your browser does not support audio.");return}
+ if(S===1){S=2;T++;speechSynthesis.cancel();upd();return}
+ if(S===2){S=1;upd();speak();return}
+ Q2=[{t:b[1]+', chapter '+c+'.'}];
+ verses.forEach(function(v,i){Q2.push({t:'Verse '+(i+1)+'.',p:paras[i]});chunks(v.replace(/[\[\]]/g,'')).forEach(function(z){Q2.push({t:z,p:paras[i]})})});
+ S=1;I=0;speak();upd()};
+window.addEventListener('pagehide',stop);
 })();
 </script></body></html>
