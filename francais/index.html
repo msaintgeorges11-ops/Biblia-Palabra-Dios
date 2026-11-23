@@ -241,7 +241,7 @@ form.card[data-tab="home"]+.card[data-tab="home"]{margin-top:8px;padding:8px 14p
   <h2>📰 ARTICLES</h2>
   <p class="small">Articles libres sur chaque livre de la Bible.</p>
 </div>
-<div class="card row2" data-tab="art"><button class="go" type="button" data-go="hoy" style="border:0;cursor:pointer">📰 Article du jour</button><a class="go alt" href="/francais/a-propos-de-dieu.html">🕊️ À propos de Dieu</a></div>
+<div class="card row2" data-tab="art"><a class="go" href="/francais/aujourdhui.html">📰 Article du jour</a><a class="go alt" href="/francais/a-propos-de-dieu.html">🕊️ À propos de Dieu</a></div>
 <details class="libro" data-tab="art"><summary><span class="lt"><span class="ic">🙏</span><span class="bn">Prières chrétiennes</span><span class="bc">20 articles</span></span></summary>
 <div class="caps">    <a class="bk or" href="/francais/priere-de-gratitude-pour-les-benedictions-de-dieu.html"><span class="bn">🙏 Prière pour remercier Dieu de toutes ses bénédictions</span><span class="bc">Un cœur reconnaissant</span></a>
     <a class="bk or" href="/francais/priere-de-protection-contre-le-danger-et-le-mal.html"><span class="bn">🙏 Prière de protection contre tout danger et tout mal</span><span class="bc">Un refuge sous la garde de Dieu</span></a>
@@ -589,7 +589,7 @@ function renderHoy(){
   if(x.c){var cp0=el('p','cierre',x.c);box.appendChild(cp0);words+=x.c.split(/\s+/).length;chunks(x.c).forEach(function(z){HQ.push({t:z,p:cp0})})}
   dur.textContent='⏱ Durée approximative : '+Math.max(1,Math.round(words/150))+' min';
   var WAI='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" style="vertical-align:-3px;margin-left:6px"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M8.5 7.5c-.3 0-.7.2-.9.6-.3.6-.4 1.4.2 2.5.9 1.7 2.4 3.2 4.2 4 1.2.5 2 .3 2.5-.4.2-.3.3-.6.2-.8l-1.6-.9c-.2-.1-.4 0-.5.1l-.5.6c-.5-.2-1.6-.9-2.2-1.9l.5-.6c.1-.2.1-.4 0-.5l-.8-1.7c-.1-.2-.3-.3-.5-.3z"/></svg>';
-  var SU='https://www.biblia-palabra-dios.com/francais/#hoy',ST='📰 '+x.t+' · Bible Parole Dieu';
+  var SU='https://www.biblia-palabra-dios.com/francais/aujourdhui.html',ST='📰 '+x.t+' · Bible Parole Dieu';
   var sh=el('div','shr');sh.appendChild(el('h3','sm','Partager cet article'));
   var wa=el('a','go',null);wa.innerHTML='📲 Partager par WhatsApp'+WAI;wa.target='_blank';wa.rel='noopener noreferrer';
   wa.href='https://wa.me/?text='+encodeURIComponent(ST+'\n'+SU);sh.appendChild(wa);
