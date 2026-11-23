@@ -279,7 +279,7 @@ function makeImage(cb){
 document.getElementById('share').addEventListener('click', function(){
   var msg = document.getElementById('msg');
   var v = DATA[cur].verses[idx];
-  var text = v.ref + ' (KJV): “' + v.txt + '”\n' + PAGE;
+  var text = v.ref + ' (KJV): “' + v.txt + '”';
   makeImage(function(blob){
     var file;
     try { file = new File([blob], 'verse.png', {type:'image/png'}); } catch(e) { file = null; }
