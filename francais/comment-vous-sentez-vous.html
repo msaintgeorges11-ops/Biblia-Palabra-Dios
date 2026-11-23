@@ -91,10 +91,10 @@ footer a{color:#3a2a00}
   <div class="card">
     <h2>Et maintenant…</h2>
     <div class="btns">
-      <a class="btn alt" id="read" href="/">📖 Lire dans la Bible</a>
+      <a class="btn alt" id="read" href="/francais/lire.html">📖 Lire dans la Bible</a>
       <button class="btn alt" id="another" type="button">Un autre verset</button>
     </div>
-    <p class="note">Résumé en mots simples. Lisez le texte complet dans la Bible avec le bouton « Lire dans la Bible ».</p>
+    <p class="note">Texte de la Bible. Lisez le chapitre complet avec le bouton « Lire dans la Bible ».</p>
     <h2 style="margin-top:18px">Partagez ce verset</h2>
     <p class="note" style="margin:0 0 4px">Envoyez-le à quelqu'un qui en a besoin aujourd'hui.</p>
     <div class="btns">
@@ -117,9 +117,9 @@ var DATA = {
   ansiedad: {
     label: "Anxieux",
     verses: [
-      {ref:"Philippiens 4:6-7", txt:"Ne vous inquiétez de rien. Dites à Dieu ce dont vous avez besoin, avec reconnaissance, et sa paix gardera votre cœur et vos pensées."},
-      {ref:"1 Pierre 5:7", txt:"Déchargez-vous sur Dieu de tous vos soucis, car il prend soin de vous."},
-      {ref:"Matthieu 6:34", txt:"Ne vous tourmentez pas pour le lendemain ; chaque jour a ses propres soucis."}
+      {ref:"Philippiens 4:6-7", txt:"Ne vous inquiétez de rien; mais en toute chose faites connaître vos besoins à Dieu par des prières et des supplications, avec des actions de grâces. Et la paix de Dieu, qui surpasse toute intelligence, gardera vos cœurs et vos pensées en Jésus-Christ."},
+      {ref:"1 Pierre 5:7", txt:"et déchargez-vous sur lui de tous vos soucis, car lui-même prend soin de vous."},
+      {ref:"Matthieu 6:34", txt:"Ne vous inquiétez donc pas du lendemain; car le lendemain aura soin de lui-même. A chaque jour suffit sa peine."}
     ],
     reflection:"L'anxiété vit souvent dans l'avenir : dans ce qui pourrait arriver. La Bible ne vous demande pas de faire comme s'il n'y avait pas de problèmes ; elle vous invite à les remettre un à un et à vivre le jour d'aujourd'hui. Respirez, dites à voix haute ce qui vous pèse et déposez-le dans la prière.",
     prayer:"Seigneur, aujourd'hui je remets entre tes mains ce qui m'inquiète. Calme mon esprit et donne-moi la paix qui ne vient pas de mes forces. Aide-moi à te faire confiance un jour à la fois. Amen."
@@ -127,9 +127,9 @@ var DATA = {
   miedo: {
     label: "Avec peur",
     verses: [
-      {ref:"Ésaïe 41:10", txt:"N'aie pas peur, car Dieu est avec toi ; il te fortifie et te soutient."},
-      {ref:"Josué 1:9", txt:"Sois fort et courageux. Dieu est avec toi partout où tu iras."},
-      {ref:"Psaumes 56:4", txt:"Quand j'ai peur, je mets ma confiance en Dieu."}
+      {ref:"Ésaïe 41:10", txt:"Ne crains rien, car je suis avec toi; Ne promène pas des regards inquiets, car je suis ton Dieu; Je te fortifie, je viens à ton secours, Je te soutiens de ma droite triomphante."},
+      {ref:"Josué 1:9", txt:"Ne t'ai-je pas donné cet ordre: Fortifie-toi et prends courage? Ne t'effraie point et ne t'épouvante point, car l'Éternel, ton Dieu, est avec toi dans tout ce que tu entreprendras."},
+      {ref:"Psaumes 56:4", txt:"Je me glorifierai en Dieu, en sa parole; Je me confie en Dieu, je ne crains rien: Que peuvent me faire des hommes?"}
     ],
     reflection:"Le courage n'est pas l'absence de peur, mais le fait de faire le pas suivant en sachant que l'on n'avance pas seul. Pensez à une petite chose que vous pouvez faire aujourd'hui malgré la peur, et faites-la avec la promesse que Dieu vous accompagne.",
     prayer:"Mon Dieu, j'ai peur, mais je crois que tu es avec moi. Donne-moi le courage d'avancer et apaise mon cœur. Sois mon refuge aujourd'hui et toujours. Amen."
@@ -137,9 +137,9 @@ var DATA = {
   tristeza: {
     label: "Triste",
     verses: [
-      {ref:"Psaumes 34:19", txt:"Dieu est près de ceux qui ont le cœur brisé et il sauve ceux qui sont abattus."},
-      {ref:"Psaumes 30:6", txt:"Les pleurs peuvent durer le temps d'une nuit, mais la joie revient avec le matin."},
-      {ref:"Matthieu 11:28", txt:"Jésus invite ceux qui sont fatigués et chargés à venir à lui pour trouver du repos."}
+      {ref:"Psaumes 34:18", txt:"L'Éternel est près de ceux qui ont le cœur brisé, Et il sauve ceux qui ont l'esprit dans l'abattement."},
+      {ref:"Psaumes 30:5", txt:"Car sa colère dure un instant, Mais sa grâce toute la vie; Le soir arrivent les pleurs, Et le matin l'allégresse."},
+      {ref:"Matthieu 11:28", txt:"Venez à moi, vous tous qui êtes fatigués et chargés, et je vous donnerai du repos."}
     ],
     reflection:"Il est normal d'être triste ; beaucoup de personnes dans la Bible ont pleuré devant Dieu. Vous n'avez pas à tout expliquer ni à paraître fort. Si la tristesse dure longtemps ou vous empêche de vivre, parlez-en aussi à une personne de confiance ou à un professionnel de santé.",
     prayer:"Seigneur, je suis fatigué et triste. Approche-toi de moi, console mon cœur et rends-moi peu à peu la joie. Merci de ne pas me laisser seul. Amen."
@@ -147,9 +147,9 @@ var DATA = {
   soledad: {
     label: "Seul",
     verses: [
-      {ref:"Deutéronome 31:6", txt:"Sois fort et courageux : Dieu lui-même marche avec toi, il ne te laissera pas et ne t'abandonnera pas."},
-      {ref:"Matthieu 28:20", txt:"Jésus promet d'être avec ses disciples tous les jours, jusqu'à la fin."},
-      {ref:"Psaumes 27:10", txt:"Même si mon père et ma mère m'abandonnent, Dieu me recueillera."}
+      {ref:"Deutéronome 31:6", txt:"Fortifiez-vous et ayez du courage! Ne craignez point et ne soyez point effrayés devant eux; car l'Éternel, ton Dieu, marchera lui-même avec toi, il ne te délaissera point, il ne t'abandonnera point."},
+      {ref:"Matthieu 28:20", txt:"et enseignez-leur à observer tout ce que je vous ai prescrit. Et voici, je suis avec vous tous les jours, jusqu'à la fin du monde."},
+      {ref:"Psaumes 27:10", txt:"Car mon père et ma mère m'abandonnent, Mais l'Éternel me recueillera."}
     ],
     reflection:"Se sentir seul fait mal, même entouré de monde. La promesse de la Bible est qu'il y a Quelqu'un qui ne s'en va pas. En plus de prier, faites un petit pas aujourd'hui : écrivez à une personne, allez à une rencontre ou aidez quelqu'un. La compagnie de Dieu se vit aussi à travers les autres.",
     prayer:"Dieu, aujourd'hui je me sens seul. Fais-moi sentir ta présence et place sur mon chemin de bonnes personnes. Apprends-moi aussi à m'approcher des autres. Amen."
@@ -157,9 +157,9 @@ var DATA = {
   esperanza: {
     label: "Sans espoir",
     verses: [
-      {ref:"Jérémie 29:11", txt:"Dieu dit qu'il a pour son peuple des projets de paix et d'avenir, non de malheur."},
-      {ref:"Romains 15:13", txt:"Que le Dieu de l'espérance vous remplisse de joie et de paix dans la confiance."},
-      {ref:"Lamentations 3:22-23", txt:"La bonté de Dieu ne s'épuise pas ; elle se renouvelle chaque matin."}
+      {ref:"Jérémie 29:11", txt:"Car je connais les projets que j'ai formés sur vous, dit l'Éternel, projets de paix et non de malheur, afin de vous donner un avenir et de l'espérance."},
+      {ref:"Romains 15:13", txt:"Que le Dieu de l'espérance vous remplisse de toute joie et de toute paix dans la foi, pour que vous abondiez en espérance, par la puissance du Saint-Esprit!"},
+      {ref:"Lamentations 3:22-23", txt:"Les bontés de l'Éternel ne sont pas épuisées, Ses compassions ne sont pas à leur terme; Elles se renouvellent chaque matin. Oh! Que ta fidélité est grande!"}
     ],
     reflection:"Quand tout semble fermé, l'espérance biblique n'est pas « tout ira comme je le veux », mais « Dieu continue d'agir ». Demain est une nouvelle occasion. Aujourd'hui, il suffit de ne pas abandonner et de demander de la force pour le pas suivant.",
     prayer:"Seigneur, mon espérance est fatiguée. Renouvelle-la ce matin. Montre-moi une porte ouverte et donne-moi la force de ne pas renoncer. Amen."
@@ -167,9 +167,9 @@ var DATA = {
   paz: {
     label: "Sans paix",
     verses: [
-      {ref:"Jean 14:27", txt:"Jésus laisse sa paix à ses disciples et leur dit de ne pas se troubler ni avoir peur."},
-      {ref:"Ésaïe 26:3", txt:"Dieu garde dans une paix parfaite celui qui se confie en lui et lui reste fidèle."},
-      {ref:"Psaumes 4:9", txt:"Je me couche et je m'endors en paix, car toi, Seigneur, tu me donnes la sécurité."}
+      {ref:"Jean 14:27", txt:"Je vous laisse la paix, je vous donne ma paix. Je ne vous donne pas comme le monde donne. Que votre cœur ne se trouble point, et ne s'alarme point."},
+      {ref:"Ésaïe 26:3", txt:"A celui qui est ferme dans ses sentiments Tu assures la paix, la paix, Parce qu'il se confie en toi."},
+      {ref:"Psaumes 4:8", txt:"Je me couche et je m'endors en paix, Car toi seul, ô Éternel! tu me donnes la sécurité dans ma demeure."}
     ],
     reflection:"La paix dont parle la Bible ne dépend pas du fait que tout soit en ordre. C'est un calme qui s'apprend en faisant confiance. Avant de dormir, dressez une courte liste de ce qui vous inquiète, remettez-la dans la prière et laissez-la hors du lit.",
     prayer:"Père, donne-moi ta paix. Apaise mon esprit, mets de l'ordre dans mes pensées et apprends-moi à me reposer en toi cette nuit. Amen."
@@ -177,9 +177,9 @@ var DATA = {
   fuerza: {
     label: "Sans force",
     verses: [
-      {ref:"Philippiens 4:13", txt:"Avec la force que Christ me donne, je peux faire face à tout ce qui vient."},
-      {ref:"Ésaïe 40:31", txt:"Ceux qui espèrent en Dieu renouvellent leur force et ne se fatiguent pas."},
-      {ref:"Psaumes 46:2", txt:"Dieu est notre refuge et notre force, un secours toujours présent dans la détresse."}
+      {ref:"Philippiens 4:13", txt:"Je puis tout par celui qui me fortifie."},
+      {ref:"Ésaïe 40:31", txt:"Mais ceux qui se confient en l'Éternel renouvellent leur force. Ils prennent le vol comme les aigles; Ils courent, et ne se lassent point, Ils marchent, et ne se fatiguent point."},
+      {ref:"Psaumes 46:1", txt:"Dieu est pour nous un refuge et un appui, Un secours qui ne manque jamais dans la détresse."}
     ],
     reflection:"Fatigue et faiblesse ne signifient pas échec. La Bible parle de recevoir de la force, non de toujours en avoir. Reposez-vous si vous en avez besoin, priez et faites un seul pas à la fois. Vous n'avez pas à régler toute votre vie aujourd'hui.",
     prayer:"Seigneur, je suis sans force. Renouvelle-moi au-dedans, soutiens-moi en ce jour difficile et aide-moi à faire le pas suivant. Amen."
@@ -187,9 +187,9 @@ var DATA = {
   gratitud: {
     label: "Reconnaissant",
     verses: [
-      {ref:"1 Thessaloniciens 5:18", txt:"Rends grâces à Dieu en toutes circonstances ; c'est sa volonté pour toi."},
-      {ref:"Psaumes 107:1", txt:"Rendez grâces à Dieu, car il est bon et son amour dure à toujours."},
-      {ref:"Psaumes 100:4", txt:"Entre en sa présence avec reconnaissance et loue-le avec joie."}
+      {ref:"1 Thessaloniciens 5:18", txt:"Rendez grâces en toutes choses, car c'est à votre égard la volonté de Dieu en Jésus-Christ."},
+      {ref:"Psaumes 107:1", txt:"Louez l'Éternel, car il est bon, Car sa miséricorde dure à toujours!"},
+      {ref:"Psaumes 100:4", txt:"Entrez dans ses portes avec des louanges, Dans ses parvis avec des cantiques! Célébrez-le, bénissez son nom!"}
     ],
     reflection:"Rendre grâces change le regard : cela nous fait remarquer ce que nous avons. Aujourd'hui, écrivez trois choses concrètes pour lesquelles vous êtes reconnaissant et dites-les à voix haute à Dieu. Si vous le pouvez, remerciez aussi une personne.",
     prayer:"Merci, Dieu, pour la vie, pour ma famille, pour ce que j'ai et pour ce que j'attends encore. Que mon cœur sache toujours dire merci. Amen."
@@ -207,7 +207,12 @@ Object.keys(DATA).forEach(function(k){
   chipsEl.appendChild(b);
 });
 
-function bibleUrl(ref){ return '/francais/'; }
+var BOOKS = {'Philippiens':'filipenses','1 Pierre':'1-pedro','Matthieu':'mateo','Ésaïe':'isaias','Josué':'josue','Psaumes':'salmos','Deutéronome':'deuteronomio','Jérémie':'jeremias','Romains':'romanos','Lamentations':'lamentaciones','Jean':'juan','1 Thessaloniciens':'1-tesalonicenses'};
+function bibleUrl(ref){
+  var m = ref.match(/^(.+?)\s(\d+):(\d+(?:-\d+)?)$/);
+  if (!m || !BOOKS[m[1]]) return '/francais/lire.html';
+  return '/francais/lire.html?l=' + BOOKS[m[1]] + '&c=' + m[2] + '&v=' + m[3];
+}
 function pick(k){
   cur = k; idx = Math.floor(Math.random()*DATA[k].verses.length);
   [].forEach.call(chipsEl.children, function(c){ c.setAttribute('aria-pressed', c.dataset.k===k ? 'true':'false'); });
@@ -233,6 +238,7 @@ function show(){
 document.getElementById('another').addEventListener('click', function(){
   var n = DATA[cur].verses.length;
   idx = (idx + 1) % n; show();
+  document.getElementById('vcard').scrollIntoView({behavior:'smooth', block:'center'});
 });
 
 function wrap(ctx, text, x, y, maxW, lh){
