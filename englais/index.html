@@ -685,7 +685,7 @@ renderHoy();
 document.addEventListener('visibilitychange',function(){if(!document.hidden&&AS===0)renderHoy()});
 
 // ---- Search ----
-function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[.,;:]/g," ").replace(/\s+/g," ").trim();}
+function norm(s){return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[.,;:\-_]/g," ").replace(/\s+/g," ").trim();}
 function find(num,name){
  var i,b,base,bn,eb;
  for(i=0;i<B.length;i++){b=B[i];bn=(b.s.match(/^[123]/)||[""])[0];eb=norm(b.n).replace(/^[123]\s*/,"");if(bn===num&&eb===name)return b;}
