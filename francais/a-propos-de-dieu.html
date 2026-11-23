@@ -28,6 +28,7 @@ function vL(){var a=frV(),f=a.filter(function(v){return vK(v)===2}),u=a.filter(f
 function vId(v){return v.voiceURI||v.name}
 function vLab(v){var k=vK(v),ic=k===0?'👨 ':(k===2?'👩 ':'🎙 ');return ic+v.name.replace(/^(Google|Microsoft)\s+/i,'')+' · '+v.lang.replace('_','-')}
 function aVoice(){var a=vL();if(!a.length)return null;var v=VSEL&&a.filter(function(x){return vId(x)===VSEL})[0];return v||a[0]}
+function sp(t){return t.replace(/\b1 Jean\b/g,'Première épître de Jean').replace(/\s*(\d+):(\d+)(?:-(\d+))?/g,function(m,c,a,b){return ', chapitre '+c+(b?', versets '+a+' à '+b:', verset '+a)})}
 function chunks(t){var o=[],c='';t.split(/(?<=[.!?:;])\s+/).forEach(function(s){if((c+' '+s).length>200&&c){o.push(c);c=s}else c=c?c+' '+s:s});if(c)o.push(c);return o}
 var btn=document.getElementById('aPlay'),sel=document.getElementById('aSel');
 function upd(){btn.textContent=S?(S===1?'⏹ Arrêter':'▶ Continuer'):'🔊 Écouter'}
@@ -51,7 +52,7 @@ function build(){
  var kids=document.querySelector('.c').children;
  for(var i=0;i<kids.length;i++){var e=kids[i],tg=e.tagName;
   if(tg==='H2')q.push({t:e.textContent.trim()+'.'});
-  else if(tg==='P'&&e!==sub)chunks(e.textContent.trim()).forEach(function(z){q.push({t:z,p:e})});
+  else if(tg==='P'&&e!==sub)chunks(sp(e.textContent.trim())).forEach(function(z){q.push({t:z,p:e})});
   else if(tg==='UL')Array.prototype.forEach.call(e.children,function(li){chunks(li.textContent.trim()).forEach(function(z){q.push({t:z,p:li})})})}
  return q}
 btn.onclick=function(){
