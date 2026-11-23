@@ -18,6 +18,8 @@ function norm(t){
   var o=ps.length>1?ps.slice(0,-1).join(', ')+' and '+ps[ps.length-1]:ps[0];
   return{t:o,pl:ps.length>1||/ to /.test(o)}};
  return String(t)
+  .replace(/\bvv\.\s*(\d+)(?:\s?[-\u2013\u2014]\s?(\d+))?/g,function(m,a,b){return(b&&+b>+a)?'verses '+a+' to '+b:'verse '+a})
+  .replace(/\bv\.\s*(\d+)/g,'verse $1')
   .replace(/\b(Jude|Philemon|Obadiah|[23] John)\s+(\d+)(?:\s?[-\u2013\u2014]\s?(\d+))?(?![\d:])/g,function(m,b,v1,v2){return b+(v2&&+v2>+v1?' verses '+v1+' to '+v2:' verse '+v1)})
   .replace(/\b([123])\s+(?=(?:Samuel|Kings|Chronicles|Corinthians|Thessalonians|Timothy|Peter|John)\b)/g,function(m,n){return NM[n]+' '})
   .replace(/\b([Ii])n (?=\d+\s?:\s?\d)/g,function(m,e){return(e==='I'?'In':'in')+' chapter '})
@@ -26,7 +28,7 @@ function norm(t){
    if(/^0\d/.test(vs))return m;
    var L=list(vs);return(pre||'chapter ')+c+', '+(L.pl?'verses ':'verse ')+L.t});
  }
-function chunks(t){var o=[],c='';t.split(/(?<=[.!?:;])\s+/).forEach(function(s){if((c+' '+s).length>200&&c){o.push(c);c=s}else c=c?c+' '+s:s});if(c)o.push(c);return o}
+function chunks(t){var o=[],c='';t.split(/(?<=[.!?:;])(?<!\bvv?\.)\s+/).forEach(function(s){if((c+' '+s).length>200&&c){o.push(c);c=s}else c=c?c+' '+s:s});if(c)o.push(c);return o}
 function speak(){if(S!==1)return;if(I>=Q.length){stop();return}var it=Q[I];
  if(it.p){if(R)R.classList.remove('rd');R=it.p;R.classList.add('rd');try{R.scrollIntoView({block:'center',behavior:'smooth'})}catch(e){}}
  var tk=++T,u=new SpeechSynthesisUtterance(norm(it.t)),v=aV();u.lang='en-US';if(v){u.voice=v;u.lang=v.lang}u.rate=.88;
